@@ -7,9 +7,9 @@ class Owner
   attr_accessor :pets, :name
   attr_reader :species
 
-  def initialize(owner)
+  def initialize(species)
     @pets = {fishes:[], cats:[], dogs:[]}
-    @species = "human"
+    @species = species
     @@all << self
   end
 
@@ -26,7 +26,7 @@ class Owner
   end
 
   def say_species
-    "I am a human."
+    "I am a #{species}."
   end
 
   def buy_fish(fish_name)
@@ -54,8 +54,12 @@ class Owner
   end
 
   def sell_pets
-    pets.each {|type, animals| animals.each {|animal| animal.mood = "nervous"} }
-    pets.clear
+    pets.each do |type, animals| 
+      animals.each do |animal| 
+        animal.mood = "nervous"
+      end
+      animals.clear
+    end
   end
 
   def list_pets
