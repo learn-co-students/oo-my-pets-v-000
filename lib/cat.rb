@@ -9,6 +9,4 @@ class Cat
   end
 
 
-
-
 end
