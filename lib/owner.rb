@@ -13,7 +13,7 @@ class Owner
   		}
   end
   def say_species
-  	puts "I am a #{@species}."
+  	return "I am a #{@species}."
   end
   def buy_fish(name)
   	new_fish = Fish.new(name)
@@ -28,24 +28,28 @@ class Owner
   	@pets[:dogs] << new_dog
   end
   def walk_dogs
-  	@pets[:dogs].each { |x| x.mood == "happy"}
+  	@pets[:dogs].each { |x| x.mood= "happy"}
   end
   def play_with_cats
-  	@pets[:cats].each { |x| x.mood == "happy"}
+  	@pets[:cats].each { |x| x.mood= "happy"}
   end
   def feed_fish
-  	@pets[:fishes].each { |x| x.mood == "happy"}
+  	@pets[:fishes].each { |x| x.mood= "happy"}
   end
   def sell_pets
+  	@pets.values.flatten.each { |x| x.mood="nervous"}
   	@pets[:fishes].clear
   	@pets[:dogs].clear
   	@pets[:cats].clear
   end
   def list_pets
-  	puts "I have #{@pets[:fishes].size} fish, #{@pets[:dogs].size} dog(s), and #{@pets[:cats].size} cat(s)."
+  	return "I have #{@pets[:fishes].size} fish, #{@pets[:dogs].size} dog(s), and #{@pets[:cats].size} cat(s)."
   end 
   def self.all
   	@@all
+  end
+  def self.count
+  	@@all.length
   end
   def self.reset_all
   	@@all.clear
