@@ -69,37 +69,3 @@ class Owner
   end
 
 end
-
-
-
-
-
-
-
-
-
-
-# pets.each {|coll, animal| puts "my collection of #{coll}
-
-
-# hash = {:students => ["Daniel", "Susan"], :teachers => ["Greenfield", "Cannon"]}
-# hash.each {|a, b| puts b}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
