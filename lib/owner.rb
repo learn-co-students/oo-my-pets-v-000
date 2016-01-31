@@ -1,3 +1,5 @@
 class Owner
-  # code goes here
+  def initialize(argument)
+    @argument = argument
+  end
 end
