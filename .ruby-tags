@@ -1,0 +1,26 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Cat	lib/cat.rb	/^class Cat$/;"	c
+Dog	lib/dog.rb	/^class Dog$/;"	c
+Fish	lib/fish.rb	/^class Fish$/;"	c
+Owner	lib/owner.rb	/^class Owner$/;"	c
+all	lib/owner.rb	/^  def self.all$/;"	F	class:Owner
+buy_cat	lib/owner.rb	/^  def buy_cat(name)$/;"	f	class:Owner
+buy_dog	lib/owner.rb	/^  def buy_dog(name)$/;"	f	class:Owner
+buy_fish	lib/owner.rb	/^  def buy_fish(name)$/;"	f	class:Owner
+count	lib/owner.rb	/^  def self.count$/;"	F	class:Owner
+feed_fish	lib/owner.rb	/^  def feed_fish$/;"	f	class:Owner
+initialize	lib/cat.rb	/^  def initialize(name)$/;"	f	class:Cat
+initialize	lib/dog.rb	/^  def initialize(name)$/;"	f	class:Dog
+initialize	lib/fish.rb	/^  def initialize(name)$/;"	f	class:Fish
+initialize	lib/owner.rb	/^  def initialize(species)$/;"	f	class:Owner
+list_pets	lib/owner.rb	/^  def list_pets$/;"	f	class:Owner
+play_with_cats	lib/owner.rb	/^  def play_with_cats$/;"	f	class:Owner
+reset_all	lib/owner.rb	/^  def self.reset_all$/;"	F	class:Owner
+say_species	lib/owner.rb	/^  def say_species$/;"	f	class:Owner
+sell_pets	lib/owner.rb	/^  def sell_pets$/;"	f	class:Owner
+walk_dogs	lib/owner.rb	/^  def walk_dogs$/;"	f	class:Owner
