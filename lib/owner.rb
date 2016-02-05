@@ -24,25 +24,34 @@ class Owner
   end
 
   def say_species
-    "I am a human."
+    "I am a #{species}."
     end  
 
   def buy_fish(name)
-    @name = name
-    fish = Fish.new(name)
-    @pets[:fishes] << fish
+    #@name = name
+    #fish = Fish.new(name)
+    #@pets[:fishes] << fish
+
+    #can refactor to:
+    pets[:fishes] << Fish.new(name)
     end
 
   def buy_cat(name)
     @name = name
     cat = Cat.new(name)
     @pets[:cats] << cat
+
+    #can refactor to:
+    #pets[:cats] << Cat.new(name)
   end
 
   def buy_dog(name)
     @name = name
     dog = Dog.new(name)
     @pets[:dogs] << dog
+
+    #can refactor to:
+    #pets[:dogs] << Dog.new(name)
   end
 
   def walk_dogs
@@ -64,10 +73,18 @@ class Owner
   end
 
   def sell_pets
-    pets[:fishes].each {|fish| fish.mood = "nervous"}
-    pets[:dogs].each {|dog| dog.mood = "nervous"}
-    pets[:cats].each {|cat| cat.mood = "nervous"}
-    self.pets.clear
+    #pets[:fishes].each {|fish| fish.mood = "nervous"}
+    #pets[:dogs].each {|dog| dog.mood = "nervous"}
+    #pets[:cats].each {|cat| cat.mood = "nervous"}
+    #self.pets.clear
+
+    #can also do:
+    pets.each do |species, animals|
+      animals.each do |animal|
+        animal.mood = "nervous"
+      end
+      animals.clear
+    end
   end
 
   def list_pets
