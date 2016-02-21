@@ -8,8 +8,12 @@ class Owner
 
   def initialize(species)
     @species = species
-    @pets = { cats: Array.new, dogs: Array.new, fishes: Array.new }
+    @pets = pet_hash
     @@all << self
+  end
+
+  def pet_hash
+    { cats: Array.new, dogs: Array.new, fishes: Array.new }
   end
 
   def self.all
@@ -56,7 +60,7 @@ class Owner
   end
 
   def sell_pets
-    pets.each do |type, pets|
+    pets.values.each do |pets|
       pets.each do |pet|
         pet.mood = 'nervous'
       end
