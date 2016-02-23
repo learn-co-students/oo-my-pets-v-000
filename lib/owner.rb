@@ -1,6 +1,9 @@
 class Owner
 
   @@owners = []
+
+  ## OWNERS = [] ## << Could have used constant instead
+
   attr_accessor :pets, :name
   attr_reader :species
 
