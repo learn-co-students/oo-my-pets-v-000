@@ -72,13 +72,16 @@ end
   end
 
 
-    def sell_pets
-    pets = {:fishes => [], :dogs =>[], :cats => []}
-    # @mood = mood
-      @pets.each do |pets|
-        pets.mood = "nervous"
+  def sell_pets
+        @pets.each do |a_key,a_array|
+        a_array.each do |animal|
+        animal.mood = "nervous"
+        end
+       a_array.clear
       end
-    end
+   
+  end
+
 
   def list_pets
     "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
