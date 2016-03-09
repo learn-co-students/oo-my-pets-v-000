@@ -1,4 +1,4 @@
-require "pry"
+
 
 class Owner
   # code goes here
@@ -35,8 +35,37 @@ class Owner
 
   def walk_dogs
     @pets[:dogs].each do |mood|
-      binding.pry
+      mood.mood = "happy"
     end
+  end
+
+  def play_with_cats
+    @pets[:cats].each do |mood|
+      mood.mood = "happy"
+    end
+  end
+
+  def feed_fish
+    @pets[:fishes].each do |mood|
+      mood.mood = "happy"
+    end
+  end
+
+  def sell_pets
+    @pets.each do|pet_type, pets|
+      pets.each do |object|
+        object.mood = "nervous"
+      end
+    end
+    @pets = {fishes: [], cats: [], dogs: []}
+  end
+
+  def list_pets
+    a = []
+    @pets.each do|pet_type, pets|
+      a << pets.count
+    end
+    "I have #{a[0]} fish, #{a[2]} dog(s), and #{a[1]} cat(s)."
   end
 
   def self.all
