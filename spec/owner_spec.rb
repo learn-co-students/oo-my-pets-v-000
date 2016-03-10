@@ -56,23 +56,23 @@ describe Owner do
     describe "#pets" do 
 
       it "is initialized with a pets attribute as a hash with 3 keys" do
-        expect(owner.pets).to eq({:fishes => [], :dogs => [], :cats => []})
+        expect(owner.pets).to eq({:fish => [], :dogs => [], :cats => []})
       end
     end
 
     describe "#buy_fish" do
       it 'can buy a fish that is an instance of the Fish class' do 
-        expect(owner.pets[:fishes].count).to eq(0)
+        expect(owner.pets[:fish].count).to eq(0)
         owner.buy_fish("Bubbles")
-        owner.pets[:fishes].each do |fish|
+        owner.pets[:fish].each do |fish|
           expect(fish).to be_a(Fish)
         end
-        expect(owner.pets[:fishes].count).to eq(1)
+        expect(owner.pets[:fish].count).to eq(1)
       end
 
       it 'knows about its fishes' do
         owner.buy_fish("Bubbles")
-        expect(owner.pets[:fishes][0].name).to eq("Bubbles")
+        expect(owner.pets[:fish][0].name).to eq("Bubbles")
       end
     end
 
@@ -110,6 +110,15 @@ describe Owner do
       end
     end
 
+    # I added this method and also changed specs so that the key of ther @pets array for
+    # fish is 'fish' instead of 'fishes' -- #pluralize was returning 'fish' not fishes and
+    # for my Mass Assignment via method_missing to come off, I had to make the adjustment.
+    describe "#buy_zebra" do
+      it 'cannot buy a zebra' do
+        expect { owner.buy_zebra("Charles") }.to raise_error(NoMethodError)
+      end
+    end
+
     describe "#walk_dogs" do 
       it "walks the dogs which makes the dogs' moods happy" do
         dog = Dog.new("Daisy")
@@ -131,7 +140,7 @@ describe Owner do
     describe "#feed_fish" do
       it "feeds the fishes which makes the fishes' moods happy" do
         fish = Fish.new("Nemo")
-        owner.pets[:fishes] << fish
+        owner.pets[:fish] << fish
         owner.feed_fish
         expect(fish.mood).to eq("happy")
       end 
@@ -145,7 +154,7 @@ describe Owner do
         [fido, tabby, nemo].each {|o| o.mood = "happy" }
         owner.pets = {
           :dogs => [fido, Dog.new("Daisy")], 
-          :fishes => [nemo], 
+          :fish => [nemo], 
           :cats => [Cat.new("Mittens"), tabby]
         }
         owner.sell_pets
