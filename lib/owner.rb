@@ -54,8 +54,11 @@ class Owner
   end
 
   def sell_pets
-    @pets.map {|pet| pet.mood = "nervous"}
-    binding.pry
-    @pets.clear
-  end
+    pets.each do |species, animals|
+      animals.each do |pet|
+        pet.mood = "nervous"
+      end
+        animals.clear
+      end
+    end
 end
