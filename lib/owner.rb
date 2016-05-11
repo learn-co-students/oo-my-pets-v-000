@@ -17,6 +17,10 @@ class Owner
     @@owner_list
   end
 
+  def self.count
+    self.all.count
+  end
+
   def self.reset_all
     #binding.pry
     self.all.clear
