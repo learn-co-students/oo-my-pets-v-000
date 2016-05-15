@@ -1,10 +1,7 @@
-require 'pry'
-
 class Owner
   @@all = []
-  attr_accessor :name, :dogs, :cats
-  attr_reader :species, :pets, :fishes
-
+  attr_accessor :name, :dogs, :cats, :pets
+  attr_reader :species, :fishes
 
   def initialize(species)
     @species = species
@@ -65,9 +62,12 @@ class Owner
   end
 
   def sell_pets
-    binding.pry
-    @pets.each {|species, pet| species.pet.mood = "nervous"}
+    @pets.each_pair {|species, pets| pets.each {|pet| pet.mood = "nervous"}}
+    @pets.clear
   end
 
+  def list_pets
+    "I have #{@pets[:fishes].count} fish, #{@pets[:dogs].count} dog(s), and #{@pets[:cats].count} cat(s)."
+  end
 
 end
