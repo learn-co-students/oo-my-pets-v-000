@@ -1,4 +1,4 @@
-require 'pry'
+require "pry "
 
 class Owner
   @@all = []
@@ -53,6 +53,7 @@ class Owner
   end
 
   def walk_dogs
+    binding.pry
     @pets[:dogs].each {|dog| dog.mood("happy")}
   end
 
