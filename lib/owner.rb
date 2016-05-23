@@ -69,12 +69,11 @@ class Owner
   def list_pets
     animals = []
     self.pets.each {|type, pets_array| animals << "#{pets[type].size} #{type}"}
-    fish_part = nil || "no"
-    dog_part = animals[1].gsub("dogs", "dog(s)") || "no"
-    cat_part = animals[2].gsub("cats", "cat(s)") || "no"
+    fish_part = animals[0].gsub("fishes", "fish") || "no fish"
+    dog_part = animals[1].gsub("dogs", "dog(s)") || "no dog(s)"
+    cat_part = animals[2].gsub("cats", "cat(s)") || "no cat(s)"
     parts = "I have #{fish_part}, #{dog_part}, and #{cat_part}."
     parts
-    binding.pry
   end
 
 end
