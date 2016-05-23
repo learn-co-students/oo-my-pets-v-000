@@ -10,10 +10,10 @@ class Owner
     @owner = owner
     @species = "human"
     @@all << self unless @@all.include?(self)
-    @pets = {}
-    @pets[:fishes] = []
-    @pets[:dogs] = []
-    @pets[:cats] = []
+    @pets = {:fishes => [], :dogs => [], :cats => []}
+    # @pets[:fishes] = []
+    # @pets[:dogs] = []
+    # @pets[:cats] = []
   end
 
   def self.all
@@ -33,18 +33,15 @@ class Owner
   end
 
   def buy_fish(name)
-    fish = Fish.new(name)
-    self.pets[:fishes] << fish
+    self.pets[:fishes] << Fish.new(name)
   end
 
   def buy_cat(name)
-    cat = Cat.new(name)
-    self.pets[:cats] << cat
+    self.pets[:cats] << Cat.new(name)
   end
 
   def buy_dog(name)
-    dog = Dog.new(name)
-    self.pets[:dogs] << dog
+    self.pets[:dogs] << Dog.new(name)
   end
 
   def walk_dogs
@@ -67,13 +64,14 @@ class Owner
   end
 
   def list_pets
-    animals = []
-    self.pets.each {|type, pets_array| animals << "#{pets[type].size} #{type}"}
-    fish_part = animals[0].gsub("fishes", "fish") || "no fish"
-    dog_part = animals[1].gsub("dogs", "dog(s)") || "no dog(s)"
-    cat_part = animals[2].gsub("cats", "cat(s)") || "no cat(s)"
-    parts = "I have #{fish_part}, #{dog_part}, and #{cat_part}."
-    parts
+    # animals = []
+    # self.pets.each {|type, pets_array| animals << "#{pets[type].size}"}
+    # fish_part = animals[0].gsub("fishes", "fish") || "no fish"
+    # dog_part = animals[1].gsub("dogs", "dog(s)") || "no dog(s)"
+    # cat_part = animals[2].gsub("cats", "cat(s)") || "no cat(s)"
+    # parts = "I have #{fish_part}, #{dog_part}, and #{cat_part}."
+    # parts
+    "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
   end
 
 end
