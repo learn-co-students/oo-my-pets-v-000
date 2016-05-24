@@ -1,7 +1,7 @@
 class Owner
   # code goes here
   attr_accessor :name, :pets
-  attr_reader 
+  attr_reader :species
 
   @@all =[]
   
@@ -17,7 +17,7 @@ class Owner
   def initialize(name)
     @name = name
     @pets_hash ={:fishes =>[], :dogs => [], :cats => []}
-
+    @species ="human"
     self.save
     
   end
@@ -32,11 +32,11 @@ class Owner
   end
 
   def species
-    "human"
+    @species
   end
   
   def say_species
-    "I am a human."
+    "I am a #{species}."
   end
 
   def pets
@@ -85,9 +85,10 @@ class Owner
 #binding.pry
       
       @pets_hash.each do |type, pets|
-        binding.pry
+        #binding.pry
         pets.each do |x|
           x.mood = "nervous"
+          x.owner = nil
         end
       end
     
