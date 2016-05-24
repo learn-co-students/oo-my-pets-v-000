@@ -16,7 +16,7 @@ class Owner
 
   def initialize(name)
     @name = name
-    @@pets_hash ={:fishes =>[], :dogs => [], :cats => []}
+    @pets_hash ={:fishes =>[], :dogs => [], :cats => []}
 
     self.save
     
@@ -40,7 +40,7 @@ class Owner
   end
 
   def pets
-    @@pets_hash
+    @pets_hash
   end
 
   def buy_fish(name)
@@ -84,8 +84,9 @@ class Owner
       # end
 #binding.pry
       
-      @@pets_hash.each_pair do |type, pets|
-        @@pets_hash[type].each do |x|
+      @pets_hash.each do |type, pets|
+        binding.pry
+        pets.each do |x|
           x.mood = "nervous"
         end
       end
