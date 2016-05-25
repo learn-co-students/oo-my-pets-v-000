@@ -16,7 +16,7 @@ class Owner
 
   def initialize(name)
     @name = name
-    @pets_hash ={:fishes =>[], :dogs => [], :cats => []}
+    @pets ={:fishes =>[], :dogs => [], :cats => []}
     @species ="human"
     self.save
     
@@ -37,10 +37,6 @@ class Owner
   
   def say_species
     "I am a #{species}."
-  end
-
-  def pets
-    @pets_hash
   end
 
   def buy_fish(name)
@@ -75,23 +71,17 @@ class Owner
   end
 
   def sell_pets
-
-      # hash = {}
-      # hash.each_pair do |key,val|
-      #   hash[key].each do |x|
-      #     #your code, for example adding into count and total inside program scope
-      #   end
-      # end
-#binding.pry
-      
-      @pets_hash.each do |type, pets|
-        #binding.pry
+      @pets.each do |type, pets|
         pets.each do |x|
           x.mood = "nervous"
           x.owner = nil
         end
       end
-    
+    @pets ={}
+  end
+
+  def list_pets
+    "I have #{self.pets[:fishes].count} fish, #{self.pets[:dogs].count} dog(s), and #{self.pets[:cats].count} cat(s)."
   end
 
 end
