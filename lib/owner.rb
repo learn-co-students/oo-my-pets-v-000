@@ -25,8 +25,8 @@ class Owner
     @@all.size
   end
 
-  def say_species
-    "I am a human."
+  def say_species(species)
+    "I am a #{species}."
   end
 
 
