@@ -31,6 +31,12 @@ class Owner
 
 
 
+  def buy_fish(fish_name)
+    my_fish = Fish.all.detect {|f| f.name == fish_name}
+    @pets[:fishes] << my_fish if my_fish
+    binding.pry
+  end
+
 
   def buy_fish(fish_name)
     Fish.all.detect do |f|
