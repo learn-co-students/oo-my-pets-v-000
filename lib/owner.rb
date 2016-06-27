@@ -23,7 +23,8 @@ class Owner
   end
 
   def self.count
-    @@owners.length #count every instance that hass been created
+    @@owners.length # .length will return the correct count before and after clearing for every instance that is inside the owners
+    #class and not every instance that has been created
   end
 
   def self.reset_all
@@ -58,9 +59,18 @@ class Owner
   end
 
   def walk_dogs
-    dog = Dog.new(name)
-    @pets[:dogs] << dog
-    # dog.mood = "happy"
+    # buy_dog(name)
+    # and change the mood of all the dogs by walking him
+    # # @mood = dog.moodall
+    # # dog.mood.replace("happy")
+    #   @pets[:dogs]<< dog.mood= "happy"
+    # binding.pry
+    @pets[:dogs].collect! do |key, mood | #.gsub!("nervous", "happy")
+      if mood != "happy"
+      mood == "happy"
+      end
+    end
+binding.pry
   end
 
 end
