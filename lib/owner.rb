@@ -54,23 +54,46 @@ class Owner
   def buy_dog(name)
     dog = Dog.new(name)
     @pets[:dogs] << dog
-    # self.dog=self
-    # dog = self.new
   end
 
   def walk_dogs
-    # buy_dog(name)
-    # and change the mood of all the dogs by walking him
-    # # @mood = dog.moodall
-    # # dog.mood.replace("happy")
-    #   @pets[:dogs]<< dog.mood= "happy"
-    # binding.pry
-    @pets[:dogs].collect! do |key, mood | #.gsub!("nervous", "happy")
-      if mood != "happy"
-      mood == "happy"
-      end
+    @pets[:dogs].each do |dog| #and whatever the  key is equal to it becomes
+      #the value in this case the value is happy
+      dog.mood != "happy"
+      dog.mood = "happy"
     end
-binding.pry
   end
+
+  def play_with_cats
+    @pets[:cats].each do |cat| #and whatever the  key is equal to it becomes
+      #the value in this case the value is happy
+       cat.mood != "happy"
+       cat.mood = "happy"
+    end
+  end
+
+  def feed_fish
+    @pets[:fishes].each do |fish| #fish is the key
+      #and whatever the  key is equal to it becomes the value in this case the value is happy
+       fish.mood != "happy"
+       fish.mood = "happy"
+    end
+  end
+
+  def sell_pets
+      @pets.each do |type, objects|
+       @pets.objects.each do | pets |
+      pets.mood = "nervous"
+        # pets.clear
+        end
+        pets.clear
+        pets.length
+      end
+        # binding.pry
+  end
+
+  # def list_pets
+  #   # "I have "
+  # end
 
 end
