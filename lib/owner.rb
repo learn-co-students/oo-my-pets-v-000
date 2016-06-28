@@ -1,7 +1,6 @@
 require "pry"
 class Owner
 
-  # attr_writer :name
   attr_accessor :pets, :name
   attr_reader :species
 
@@ -81,10 +80,9 @@ class Owner
   end
 
   def sell_pets
-      @pets.each do |type, arrays|
-         arrays.each do | pet_object |
-           pet_object.mood = "nervous"
-  # binding.pry
+      @pets.each do |type, arrays| #iterate through the first key and value. The value are several arrays
+         arrays.each do | pet_object | #iterate through the objects
+           pet_object.mood = "nervous" #set the string method
          end
       end
       @pets.clear
