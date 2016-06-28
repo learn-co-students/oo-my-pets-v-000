@@ -81,19 +81,17 @@ class Owner
   end
 
   def sell_pets
-      @pets.each do |type, objects|
-       @pets.objects.each do | pets |
-      pets.mood = "nervous"
-        # pets.clear
-        end
-        pets.clear
-        pets.length
+      @pets.each do |type, arrays|
+         arrays.each do | pet_object |
+           pet_object.mood = "nervous"
+  # binding.pry
+         end
       end
-        # binding.pry
+      @pets.clear
   end
 
-  # def list_pets
-  #   # "I have "
-  # end
+  def list_pets
+    "I have #{@pets[:fishes].count} fish, #{@pets[:dogs].count} dog(s), and #{@pets[:cats].count} cat(s)."
+  end
 
 end
