@@ -24,5 +24,7 @@ describe Cat do
     cat.mood = "playful"
     expect(cat.mood).to eq("playful")
   end
+
+  RSpec::Expectations.configuration.on_potential_false_positives = :nothing
   
 end
