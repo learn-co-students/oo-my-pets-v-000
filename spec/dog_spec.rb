@@ -24,5 +24,7 @@ describe Dog do
     dog.mood = "hungry"
     expect(dog.mood).to eq("hungry")
   end
+
+  RSpec::Expectations.configuration.on_potential_false_positives = :nothing
   
 end
