@@ -2,13 +2,13 @@ class Owner
   # code goes here
   @@owners = []
 
-  attr_accessor :name
-  attr_reader :species, :fishes
+  attr_accessor :name, :pets, :fishes
+  attr_reader :species
 
-  def initialize(owner)
-    @owner = owner
+  def initialize(species)
     @@owners << self
-    @species = "human"
+    @species = species
+    @pets = {fishes: [], cats: [], dogs: []}
   end
 
   def self.reset_all
@@ -27,10 +27,46 @@ class Owner
     "I am a #{self.species}."
   end
 
-  def pets
+  def buy_fish(fish)
+    self.pets[:fishes] << Fish.new(fish)
   end
 
-  def buy_fish(fish)
-    self.fishes = Fish.new(fish)
+  def buy_cat(cat)
+    self.pets[:cats] << Cat.new(cat)
+  end
+
+  def buy_dog(dog)
+    self.pets[:dogs] << Dog.new(dog)
+  end
+
+  def walk_dogs
+    self.pets[:dogs].each do |dog|
+      dog.mood = "happy"
+    end
+  end
+
+  def play_with_cats
+    self.pets[:cats].each do |cat|
+      cat.mood = "happy"
+    end
+  end
+
+  def feed_fish
+    self.pets[:fishes].each do |fish|
+      fish.mood = "happy"
+    end
+  end
+
+  def sell_pets
+    pets.each do |species, animals|
+      animals.each do |animal|
+        animal.mood = "nervous"
+      end
+      animals.clear
+    end
+  end
+
+  def list_pets
+    "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
   end
 end
