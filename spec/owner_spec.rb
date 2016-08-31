@@ -134,7 +134,7 @@ describe Owner do
         owner.pets[:fishes] << fish
         owner.feed_fish
         expect(fish.mood).to eq("happy")
-      end 
+      end  
     end
 
     describe "#sell_pets" do 
