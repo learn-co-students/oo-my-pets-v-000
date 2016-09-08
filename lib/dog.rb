@@ -7,8 +7,4 @@ class Dog
     @name = name
     @mood = "nervous"
   end
-
-  def self.owner=(owner_name)
-    @owner = owner_name
-  end
 end
