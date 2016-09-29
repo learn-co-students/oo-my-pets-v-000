@@ -23,22 +23,26 @@ class Owner
   end
 
   def say_species
-    "I am a #{@species}."
+    "I am a #{species}." # species = self.species
+    # "I am a #{@species}."
   end
 
   def buy_cat(cat_name)
-    new_cat = Cat.new(cat_name)
-    self.pets[:cats] << new_cat
+    self.pets[:cats] << Cat.new(cat_name)
+    # new_cat = Cat.new(cat_name)
+    # self.pets[:cats] << new_cat
   end
 
   def buy_dog(dog_name)
-    new_dog = Dog.new(dog_name)
-    self.pets[:dogs] << new_dog
+    self.pets[:dogs] << Dog.new(dog_name)
+    # new_dog = Dog.new(dog_name)
+    # self.pets[:dogs] << new_dog
   end
 
   def buy_fish(fish_name)
-    new_fish = Fish.new(fish_name)
-    self.pets[:fishes] << new_fish
+    self.pets[:fishes] << Fish.new(fish_name)
+    # new_fish = Fish.new(fish_name)
+    # self.pets[:fishes] << new_fish
   end
 
   def play_with_cats
