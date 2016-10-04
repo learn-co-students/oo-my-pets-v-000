@@ -7,7 +7,7 @@ class Owner
   attr_reader :species
 
   def initialize(species)
-    @species = "human"
+    @species = species
     @name = name
     @pets = {:fishes => [], :dogs=> [], :cats => []}
     @@all << self
@@ -27,24 +27,19 @@ class Owner
   end
 
   def say_species
-    "I am a human."
+    "I am a #{species}."
   end
 
   def buy_fish(name)
-   fish = Fish.new(name)
-    @pets[:fishes] << fish
- #
+    @pets[:fishes] << Fish.new(name)
   end
 
   def buy_cat(name)
-    cat = Cat.new(name)
-    @pets[:cats] << cat
+    @pets[:cats] << Cat.new(name)
   end
 
   def buy_dog(name)
-    dog = Dog.new(name)
-    @pets[:dogs] << dog
-
+    @pets[:dogs] << Dog.new(name)
   end
 
   def walk_dogs
@@ -67,7 +62,6 @@ class Owner
      @pets.each do |animal_type, details|
        details.each { |animal| animal.mood = "nervous" }
      end
-      #
      @pets.clear
   end
 
@@ -77,8 +71,12 @@ class Owner
       @pets.each do |species, details|
         main_1 << "#{details.count}"
       end
-    # raise main_1[1].inspect
+    # raise main_1[1].insp ect
        "I have #{main_1[0]} fish, #{main_1[1]} dog(s), and #{main_1[2]} cat(s)."
   end
+# or you could also do:
+ #  def list_pets
+#     "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
+#   end
 
 end
