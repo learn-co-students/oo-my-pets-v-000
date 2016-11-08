@@ -74,31 +74,3 @@ class Owner
   end
 
 end
-
-# class Car
-#   attr_accessor :gas, :speed, :nickname
-#   attr_reader :make, :model
-#
-#   @@all = []
-#
-#   def initialize(make, model)
-#     @make = make
-#     @model = model
-#   end
-#
-#   def self.manufacture(make="Prototype", model="Test Model")
-#     car = self.new(make, model)
-#     car.save
-#     car
-#   end
-#
-#   def drive(distance)
-#     puts "You got there in #{distance / self.speed} hours."
-#   end
-#
-#   private
-#
-#   def save
-#     @@all << self unless @@all.include?(self)
-#   end
-# end
