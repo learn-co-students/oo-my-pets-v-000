@@ -28,19 +28,19 @@ class Owner
   end
 
   def feed_fish
-    make_happy(@pets[:fishes])
+    make_happy(:fishes)
   end
 
   def play_with_cats
-    make_happy(@pets[:cats])
+    make_happy(:cats)
   end
 
   def walk_dogs
-    make_happy(@pets[:dogs])
+    make_happy(:dogs)
   end
 
-  def make_happy(pet_array)
-    pet_array.each { |pet| pet.mood = 'happy' }
+  def make_happy(pet_selector)
+    @pets[pet_selector].each { |pet| pet.mood = 'happy' }
   end
 
   def list_pets
