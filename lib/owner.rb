@@ -54,6 +54,20 @@ class Owner
   end
 
   def sell_pets
-      pets.each { |type, pet| pets == {}; pet.mood = "nervous" }
+    pets.each do |type, pet|
+      pet.each do |m| m.mood = "nervous"
+      end
+    end
+    pets.clear
+  end
+
+  def list_pets
+    counts = Hash.new 0
+    pets.collect do |type, pet|
+      pet.count do |p|
+        counts[p] += 1
+      puts "I have #{p} fish, #{p} dog(s), and #{p} cat(s)."
+      end
+    end
   end
 end
