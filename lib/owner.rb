@@ -62,12 +62,6 @@ class Owner
   end
 
   def list_pets
-    counts = Hash.new 0
-    pets.collect do |type, pet|
-      pet.count do |p|
-        counts[p] += 1
-      puts "I have #{p} fish, #{p} dog(s), and #{p} cat(s)."
-      end
-    end
+      return "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
   end
 end
