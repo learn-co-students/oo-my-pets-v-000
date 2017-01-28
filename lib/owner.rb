@@ -1,7 +1,7 @@
 class Owner
   # code goes here
-  attr_accessor :name
-  attr_reader :species, :pets
+  attr_accessor :name, :pets
+  attr_reader :species
 
   @@all = []
 
@@ -55,6 +55,12 @@ class Owner
   end
 
   def sell_pets
+    @pets.each do |type, names|
+      names.each do |pet|
+        pet.mood = "nervous"
+      end
+    end
+    @pets.clear
   end
 
   def list_pets
