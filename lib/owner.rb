@@ -64,7 +64,7 @@ class Owner
     #"I have #{number_of_pets[0]} fish, #{number_of_pets[2]} dog(s), and #{number_of_pets[1]} cat(s)."
 
     #refactored solution
-    "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
+    "I have #{@pets[:fishes].count} fish, #{@pets[:dogs].count} dog(s), and #{@pets[:cats].count} cat(s)."
   end
 
 end
