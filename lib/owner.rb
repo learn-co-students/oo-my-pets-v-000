@@ -54,13 +54,17 @@ class Owner
   def sell_pets
     @pets.each do |type_of_pet, pets|
       pets.each{|pet| pet.mood = "nervous"}
+      pets.clear
     end
-    @pets.clear
   end
 
   def list_pets
-    number_of_pets = @pets.collect{|type_of_pet, pets| pets.count}
-    "I have #{number_of_pets[0]} fish, #{number_of_pets[2]} dog(s), and #{number_of_pets[1]} cat(s)."
+    #first solution
+    #number_of_pets = @pets.collect{|type_of_pet, pets| pets.count}
+    #"I have #{number_of_pets[0]} fish, #{number_of_pets[2]} dog(s), and #{number_of_pets[1]} cat(s)."
+
+    #refactored solution
+    "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
   end
 
 end
