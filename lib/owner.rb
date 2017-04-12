@@ -1,6 +1,5 @@
 class Owner
   attr_accessor :name, :pets
-  attr_reader :species
   @@all=[]
   def initialize(name)
     @name=name
@@ -10,6 +9,9 @@ class Owner
   end
   def self.all
     @@all
+  end
+  def species
+    @species.dup.freeze
   end
   def species=(species)
     @species=species
