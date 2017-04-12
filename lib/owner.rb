@@ -14,15 +14,11 @@ class Owner
     @species.dup.freeze
   end
   def species=(species)
-    @species=species
+    raise SettingWriterError,"#{self.name} received, none expected."
   end
   def say_species
     "I am a #{species}."
   end
-  def species=(species)
-    raise SettingWriterError,"#{self.name} received, none expected."
-  end
-
   def buy_fish(name)
     self.pets[:fishes]<<Fish.new(name)
   end
