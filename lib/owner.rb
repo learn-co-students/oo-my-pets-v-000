@@ -70,28 +70,20 @@ class Owner
   end
 
   def list_pets
-    start_string= "I have"
+    start_string = "I have "
     @pets.each do |species, animals|
       if species.to_s == "fishes"
         species = "fish"
-        start_string += " #{animals.count} #{species},"
+        start_string += "#{animals.count} #{species},"
       elsif species.to_s == "dogs"
         species = "dog(s)"
         start_string += " #{animals.count} #{species},"
-      else
+      else 
         species = "cat(s)"
         start_string += " and #{animals.count} #{species}."
-      end
-    end
-      start_string
-  end
-end
-#       # else
-#       #   species = species.to_s.chop + "(s)"
-#       end
-#        start_string +#= " #{animals.count} #{species}"
-#     end
-#     start_string
-#   end
-#
-# end
+      end 
+    end 
+    start_string
+  end 
+end 
+
