@@ -1,4 +1,4 @@
-require 'pry'
+
 class Owner
   attr_accessor :owner, :name, :pets
   attr_reader :species
@@ -36,27 +36,34 @@ class Owner
     pets[:dogs].push(Dog.new(dog))
   end
 
-  def self.walk_dogs
+  def walk_dogs
     self.pets[:dogs].each{|dog| dog.mood = "happy"}
-    binding.pry
+    #binding.pry
   end
 
-  def self.play_with_cats
+  def play_with_cats
     self.pets[:cats].each{|cat| cat.mood = "happy"}
   end
 
-  def self.feed_fish
+  def feed_fish
     self.pets[:fishes].each{|fish| fish.mood = "happy"}
   end
 
-  def self.sell_pets
-    self.pets.clear
+  def sell_pets
+    pets.each do |species, pets_array|
+      pets_array.each{|pet| pet.mood = "nervous"}
+      pets_array.clear
+    end
   end
 
-  def self.list_pets
-    self.pets[].count.each do |p|
-      puts "I have #{p} fish, #{p} dog(s), and #{p} cat(s)"
-    end
+  def list_pets
+    num_fish = nil
+    num_dog = nil
+    num_cat = nil
+    num_fish = pets[:fishes].length
+    num_dog = pets[:dogs].length
+    num_cat = pets[:cats].length
+    "I have #{num_fish} fish, #{num_dog} dog(s), and #{num_cat} cat(s)."
   end
 
   def self.all
