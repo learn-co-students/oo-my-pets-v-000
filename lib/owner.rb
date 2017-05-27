@@ -2,11 +2,11 @@ class Owner
   @@all = []
   attr_accessor :pets, :name
   attr_reader :species
-  def initialize(name)
-    @name = name
+  
+  def initialize(species)
     @pets = {fishes: [], cats: [], dogs: []}
     @@all << self
-    @species = "human"
+    @species = species
   end
 
   def buy_cat(name)
@@ -37,7 +37,7 @@ class Owner
   end
 
   def say_species
-    "I am a human."
+    "I am a #{@species}."
   end
 
   def walk_dogs
