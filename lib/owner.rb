@@ -20,10 +20,16 @@ def pets
   @pets
 end
 
-def species(species)
-  if owner
-    species = "human"
-  end 
+def species
+  if self
+    @species = "human"
+  end
+end
+
+def say_species
+  if self.species == "human"
+    return "I am a human."
+  end
 end
 
 def buy_fish(name)
