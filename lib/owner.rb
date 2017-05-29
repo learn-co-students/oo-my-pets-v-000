@@ -21,6 +21,9 @@ def pets
 end
 
 def species(species)
+  if owner
+    species = "human"
+  end 
 end
 
 def buy_fish(name)
