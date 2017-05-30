@@ -43,19 +43,19 @@ class Owner
 
   def buy_fish(name)
     fish = Fish.new(name)
-    @pets[:fishes][0] = fish
+    @pets[:fishes] << fish
     fish.owner = self
   end
 
   def buy_cat(name)
     cat = Cat.new(name)
-    @pets[:cats][0] = cat
+    @pets[:cats] << cat
     cat.owner = self
   end
 
   def buy_dog(name)
     dog = Dog.new(name)
-    @pets[:dogs][0] = dog
+    @pets[:dogs] << dog
     dog.owner =self
   end
 
@@ -81,7 +81,7 @@ class Owner
   end
 
   def list_pets
-    "I have 2 fish, 3 dog(s), and #{pets[:cats].count} cat(s)."
+    "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
   end
 
 
