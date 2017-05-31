@@ -1,7 +1,7 @@
 require 'pry'
 
 class Owner
-  attr_accessor :owner, :cat, :dog, :fish, :pets, :fishes, :cats, :dogs
+  attr_accessor :owner, :cat, :dog, :fish, :pets, :fishes, :cats, :dogs, :mood
   attr_reader :species, :name
   @@all = []
 
@@ -44,51 +44,58 @@ class Owner
 
   # Owner instance methods #pets is initialized with a pets attribute as a hash with 3 keys
   def pets
-    # Fish.all.clear
-    # Dog.all.clear
-    # Cat.all.clear
-    # @pets = {:fishes => [Fish.all], :dogs => [Dog.all], :cats => [Cat.all]}
-    @pets = {:fishes => [], :dogs => [], :cats => []}
+    @pets ||= {:fishes => [], :dogs => [], :cats => []}
   end
 
   # Owner instance methods #buy_fish can buy a fish that is an instance of the Fish class
   # Owner instance methods #buy_fish knows about its fishes
   def buy_fish(name)
-    # Fish.all.clear
     self.pets[:fishes] << Fish.new(name)
-    binding.pry
-
     @pets
-    # @pets = {:fishes => [Fish.new(name)], :dogs => [], :cats => []}
   end
 
   # Owner instance methods #buy_cat can buy a cat that is an instance of the Cat class
   # Owner instance methods #buy_cat knows about its cats
-  def buy_cat
+  def buy_cat(name)
+    self.pets[:cats] << Cat.new(name)
+    @pets
   end
 
   # Owner instance methods #buy_dog can buy a dog that is an instance of the Dog class
   # Owner instance methods #buy_dog knows about its dogs
-  def buy_dog
+  def buy_dog(name)
+    self.pets[:dogs] << Dog.new(name)
+    @pets
   end
 
   # Owner instance methods #walk_dogs walks the dogs which makes the dogs' moods happy
   def walk_dogs
+    pets[:dogs].each do |dog|
+      dog.mood = "happy"
+    end
   end
 
   # Owner instance methods #play_with_cats plays with the cats which makes the cats moods happy
   def play_with_cats
+    pets[:cats].each do |cat|
+      cat.mood = "happy"
+    end
   end
 
   # Owner instance methods #feed_fish feeds the fishes which makes the fishes' moods happy
   def feed_fish
+    pets[:fishes].each do |fish|
+      fish.mood = "happy"
+    end
   end
 
   # Owner instance methods #sell_pets can sell all its pets, which make them nervous
   def sell_pets
+    @pets = {:fishes => [], :dogs => [], :cats => []}
   end
 
   # Owner instance methods #list_pets can list off its pets
   def list_pets
+    puts "I have #{pets[:fishes].length} fish, #{pets[:cats].length} cats, & #{pets[:dogs].length} dogs"
   end
 end
