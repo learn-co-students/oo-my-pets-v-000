@@ -91,11 +91,23 @@ class Owner
 
   # Owner instance methods #sell_pets can sell all its pets, which make them nervous
   def sell_pets
+    pets[:fishes].each do |fish|
+      fish.mood = "nervous"
+    end
+
+    pets[:cats].each do |cat|
+      cat.mood = "nervous"
+    end
+
+    pets[:dogs].each do |dog|
+      dog.mood = "nervous"
+    end
+
     @pets = {:fishes => [], :dogs => [], :cats => []}
   end
 
   # Owner instance methods #list_pets can list off its pets
   def list_pets
-    puts "I have #{pets[:fishes].length} fish, #{pets[:cats].length} cats, & #{pets[:dogs].length} dogs"
+    "I have #{pets[:fishes].length} fish, #{pets[:dogs].length} dog(s), and #{pets[:cats].length} cat(s)."
   end
 end
