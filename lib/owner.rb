@@ -42,20 +42,17 @@ end
 
 def buy_fish(name)
     fish = Fish.new(name)
-    @pets[:fishes][0] = fish
-    fish.owner = self
+    @pets[:fishes] << fish
 end
 
 def buy_cat(name)
     cat = Cat.new(name)
-    @pets[:cats][0] = cat
-    cat.owner = self
+    @pets[:cats] << cat
 end
 
 def buy_dog(name)
     dog = Dog.new(name)
-    @pets[:dogs][0] = dog
-    dog.owner = self
+    @pets[:dogs] << dog
 end
 
 def walk_dogs
@@ -77,8 +74,12 @@ def feed_fish
 end
 
 def sell_pets
-  owner.pets.each do
-end
+  @pets.each do |varieties, animals|
+    animals.each do |animal|
+       animal.mood = "nervous"
+         end
+        animals.clear
+     end
 end
 
 def list_pets
