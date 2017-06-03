@@ -39,7 +39,7 @@ class Owner
   end
 
   def pet_mood(pet, mood)
-    @pets[pet].collect{|pet| pet.mood = mood}
+    @pets[pet].each{|pet| pet.mood = mood}
   end
 
   def sell_pets
@@ -50,14 +50,7 @@ class Owner
   end
 
   def list_pets
-    says = ["I have ", "", "and "]
-    self.pets.keys.each_with_index do |key, index|
-      says[index] << "#{self.pets[key].length}"
-    end
-    says[0] << " fish, "
-    says[1] << " dog(s), "
-    says[2] << " cat(s)."
-    says.join
+    "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
   end
 
   def self.all
