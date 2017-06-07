@@ -1,5 +1,7 @@
+require 'pry'
+
 class Owner
-  attr_accessor :cat, :dog, :fish, :pets, :name
+  attr_accessor :cat, :dog, :fish, :pets, :name, :mood
   attr_reader :species
 
   @@Owners = []
@@ -42,7 +44,31 @@ class Owner
   end
 
   def walk_dogs
-    Dog.mood = "happy"
+    @pets[:dogs].each {|o| o.mood = "happy"}
+  end
+
+  def play_with_cats
+    @pets[:cats].each {|o| o.mood = "happy"}
+  end
+
+  def feed_fish
+    @pets[:fishes].each {|o| o.mood = "happy"}
+  end
+
+  def sell_pets
+    # binding.pry
+      # @pets[:fishes].collect {|o| o.mood = "happy"}
+      # @pets[:dogs].collect {|o| o.mood = "happy"}
+      # @pets[:cats].collect {|o| o.mood = "happy"}
+    @pets.each { |p, o| o.each {|pet| pet.mood = "nervous" } }
+      @pets = {fishes: [], cats: [], dogs: []}
+  end
+
+  def list_pets
+    fish_count = @pets[:fishes].count
+    dog_count = @pets[:dogs].count
+    cat_count = @pets[:cats].count
+    "I have #{fish_count} fish, #{dog_count} dog(s), and #{cat_count} cat(s)."
   end
 
 end
