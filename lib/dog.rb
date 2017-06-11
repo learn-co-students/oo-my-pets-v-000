@@ -10,7 +10,6 @@ class Dog
   def name=(new_name)
     raise ChangeNameError if new_name != name
     @name = new_name
-    
   end
 
 end
