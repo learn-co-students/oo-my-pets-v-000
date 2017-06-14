@@ -70,22 +70,14 @@ class Owner
     @pets[:cats].each {|cat| cat.mood = "nervous"}
     @pets[:fishes].each {|fish| fish.mood = "nervous"}
     @pets = {:dogs => [], :cats => [], :fishes => []}
-  end@pets.collect {|animal, instance| icount = instance.count}
-
+  end
 
   def list_pets
-    binding.pry
-
-  #   icount = []
-  #   animals = []
-  #   @pets.collect do |animal, instance|
-  #     icount << instance.count
-  #     animals << animal.to_s
-  #     icount << animals
-  #     icount.each do |things|
-  #       puts "I have #{things[0]} #{things[3]}, #{things[1]} #{things[4]}, and #{things[2]} #{things[5]}."
-  #     end
-  #   end
+    @values = []
+    @values << @pets[:fishes].size
+    @values << @pets[:dogs].size
+    @values << @pets[:cats].size
+    "I have #{@values[0]} fish, #{@values[1]} dog(s), and #{@values[2]} cat(s)."
   end
 
 
