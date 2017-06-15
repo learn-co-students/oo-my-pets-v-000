@@ -29,11 +29,11 @@ class Owner
   end
 
 # instance methods below
-  def species #initializes with new species/can't change
+  def species
    @species = self.owner
   end
 
-  def say_species #can say its species
+  def say_species
     "I am a #{species}."
   end
 
@@ -57,23 +57,25 @@ class Owner
   end
 
   def walk_dogs
-    @pets[:dogs].each {|dog| dog.mood = "happy"}
+    @pets[:dogs].collect {|dog| dog.mood = "happy"}
   end
 
   def play_with_cats
-
+    @pets[:cats].collect {|cat| cat.mood = "happy"}
   end
 
   def feed_fish
-
+    @pets[:fishes].collect {|fish| fish.mood = "happy"}
   end
 
   def sell_pets
-
+    pets.each do |type, pets|
+    pets.collect{|pet| pet.mood = "nervous"}
+   end
+   pets.clear
   end
 
   def list_pets
-
+    "I have #{@pets[:fishes].length} fish, #{@pets[:dogs].length} dog(s), and #{@pets[:cats].length} cat(s)."
   end
-
 end
