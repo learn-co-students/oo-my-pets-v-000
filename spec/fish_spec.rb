@@ -24,4 +24,11 @@ describe Fish do
     fish.mood = "excited"
     expect(fish.mood).to eq("excited")
   end
+
+  describe "#escape_bowl" do
+    it "can let the fish escape to the ocean" do
+      expect(fish.escape_bowl).to eq("Ocean")
+    end
+  end
+
 end
