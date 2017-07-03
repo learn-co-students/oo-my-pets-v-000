@@ -47,10 +47,12 @@ class Owner
 
   def sell_pets
     #change mood on all pets to "nervous"
-    pets.each_pair do |key, pets_array|
-      pets[key].each {|pet| pet.mood = "nervous"}
+    pets.each do |species, pets_array|
+      pets_array.each do |pet|
+        pet.mood = "nervous"
+      end
+      pets_array.clear
     end
-    pets.clear
   end
 
   def self.reset_all
