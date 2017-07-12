@@ -72,7 +72,6 @@ class Owner
     dogs = pets[:dogs].count
 
     "I have #{fishes} fish, #{dogs} dog(s), and #{cats} cat(s)."
-
   end
 
 end
