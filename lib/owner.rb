@@ -56,9 +56,11 @@ class Owner
   end
 
   def sell_pets
-    @pets[:fishes].map! {|fish| fish.mood = "nervous"}
-    @pets[:dogs].map! {|dog| dog.mood = "nervous"}
-    @pets[:cats].map! {|cat| cat.mood = "nervous"}
+    @pets.each do |species, animals|
+      animals.each do |animal|
+        animal.mood = "nervous"
+      end
+    end
     @pets.clear
   end
 
