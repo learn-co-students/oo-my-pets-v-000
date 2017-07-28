@@ -1,3 +1,5 @@
 class Cat
-  # code goes here
+def initialize(name = nil)
+  @name = name
+end 
 end
