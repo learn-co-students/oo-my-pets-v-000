@@ -70,9 +70,8 @@ class Owner
 
 	# itererate through hash to change ALL pet's moods to nervous.
 	def sell_pets
-		@pets[:dogs].map {|m|m.mood = "nervous"}
-		@pets[:cats].map {|m|m.mood = "nervous"}
-		@pets[:fishes].map {|m|m.mood = "nervous"}
+		#binding.pry
+		@pets.each do |species, pets| pets.each do |pet| pet.mood = "nervous"end end
 		@pets = {}
 	end
 
