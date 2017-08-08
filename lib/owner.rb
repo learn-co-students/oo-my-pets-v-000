@@ -53,10 +53,17 @@ class Owner
   end
 
   def sell_pets  #find a way to do this that iterates through the hash in one step
-  	@pets[:dogs].each {|pet| pet.mood = "nervous"}
-  	@pets[:cats].each {|pet| pet.mood = "nervous"}
-  	@pets[:fishes].each {|pet| pet.mood = "nervous"}
-  	@pets = {}
+  	# @pets[:dogs].each {|pet| pet.mood = "nervous"}
+  	# @pets[:cats].each {|pet| pet.mood = "nervous"}
+  	# @pets[:fishes].each {|pet| pet.mood = "nervous"}
+  	# @pets = {}
+
+  	@pets.each do  |species, animals|
+  		animals.each do |animal|
+  			animal.mood = "nervous"
+  		end
+  		animals.clear
+  	end
   end
 
   def list_pets
