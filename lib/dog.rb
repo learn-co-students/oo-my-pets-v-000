@@ -7,6 +7,7 @@ class Dog
     @mood = "nervous"
   end
 
+# was unnecessary to set the owner for this lab.  
   def owner=(owner)
     @owner = owner
     owner.buy_dog(self) unless owner.pets[:dogs].include?(self)

@@ -6,9 +6,8 @@ class Owner
 
   @@all = []
 
-  def initialize(name)
-    @name = name
-    @species = "human"
+  def initialize(species)
+    @species = species
     @pets = {:fishes => [], :dogs => [], :cats => []}
     @@all << self
   end
@@ -33,6 +32,7 @@ class Owner
     new_fish = Fish.new(fish)
     @pets[:fishes] << new_fish
     new_fish.owner=(self) unless new_fish.owner == self
+    # ^^ unnecessary for this lab.
     # if new_fish.owner != self
     #   new_fish.owner = self
     # end
@@ -43,12 +43,14 @@ class Owner
     new_cat = Cat.new(cat)
     @pets[:cats] << new_cat
     new_cat.owner=(self) unless new_cat.owner == self
+        # ^^ unnecessary for this lab.
   end
 
   def buy_dog(dog)
     new_dog = Dog.new(dog)
     @pets[:dogs] << new_dog
     new_dog.owner=(self) unless new_dog.owner == self
+        # ^^ unnecessary for this lab.
   end
 
   def walk_dogs
@@ -68,7 +70,8 @@ class Owner
       animals.each do |animal|
         animal.mood = "nervous"
       end
-      self.pets[specie].clear
+      # self.pets[specie].clear
+      animals.clear
     end
   end
 
