@@ -18,8 +18,8 @@ class Owner
   #     can reset the owners that have been created
   #     can count how many owners have been created
   def self.all
-    # binding.pry
-    @@all.include?(self)
+    unless @@all.include?(self)
+    @@all<<self
     # @@owner_count
   end
 
