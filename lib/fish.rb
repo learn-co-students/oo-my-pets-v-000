@@ -1,7 +1,7 @@
 require 'pry'
 
 class Fish
-  attr_accessor :name, :mood
+  attr_accessor :name, :mood, :owner
 
   def initialize(name)
     @name = name

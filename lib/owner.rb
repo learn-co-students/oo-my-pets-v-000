@@ -1,29 +1,31 @@
 require 'pry'
 
 class Owner
-  attr_accessor :name, :owner, :pets
-  @@owner_count = 0
+  attr_accessor :name, :owner, :pets, :species
   @@all = []
 
   def initialize(name)
     @name = name
     @pets = {:fishes=>[], :dogs=>[], :cats=>[]}
+    @species = "human"
     save
   end
 
-  def self.all
+  def self.all #create owners
     @@all
   end
 
-  def save
+  def save #keep track of owners
     @@all<<self
   end
 
-  def self.reset_all
-    #  binding.pry
-    # @@all = []
-     @@all.clear
-   end
+  def self.count
+    @@all.size
+  end
+
+  def self.reset_all #can reset owners
+    @@all.clear
+  end
 
   def species=(species)
     if !name.nil?
@@ -42,46 +44,51 @@ class Owner
     @name
   end
 
-  def pets
-    pets = {:fishes=>[], :dogs=>[], :cats=>[]}
+  def buy_fish(name) #can buy a fish
+    name = Fish.new(name)
+    @pets[:fishes] << name #"Bubbles is added to fish array"
   end
 
-  def mood
-    @mood
+  def buy_cat(name)
+    name = Cat.new(name)
+    @pets[:cats] << name
   end
 
-  def buy_fish(pet_name)
-    Fish.new(pet_name)
-    self.pets[:fishes].each do |fish|
-      fish = Fish
-    @@fishes+=1
-  end
-  end
-
-  def buy_cat(pet_name)
-    # self.buy_cat(pet_name)
-  end
-
-  def buy_dog(pet_name)
-    # self.buy_dog(pet_name)
+  def buy_dog(name)
+    name = Dog.new(name)
+    @pets[:dogs] << name
   end
 
   def walk_dogs
-    dog.mood = "happy"
+    @pets[:dogs].each {|dog| dog.mood="happy"}
   end
 
   def play_with_cats
-    cat.mood = "happy"
+    @pets[:cats].each {|cat| cat.mood="happy"}
   end
 
   def feed_fish
-    fish.mood = "happy"
+    @pets[:fishes].each {|fish| fish.mood="happy"}
   end
 
   def sell_pets
+    @pets.each do |type, pet|
+      pet.each do |pet|
+        @pets.empty?
+          @pets.mood="nervous"
+          
+        end
+      end
+    end
   end
 
   def list_pets
+    @pets[:fishes].each do |pet|
+      @pets[:cats].each do |pet|
+        @pets[:dogs].each do |pet|
+      puts "#{type} and #{pet}"
+    end
   end
+end
 
 end
