@@ -73,12 +73,9 @@ class Owner
 
   def sell_pets
     @pets.each do |type, pet|
-      pet.each do |pet|
-        @pets.empty?
-          @pets.mood="nervous"
-          
-        end
-      end
+      binding.pry
+       pet.each{ |pet| name.clear }
+           pet.mood="nervous"
     end
   end
 
@@ -89,6 +86,7 @@ class Owner
       puts "#{type} and #{pet}"
     end
   end
+end
 end
 
 end
