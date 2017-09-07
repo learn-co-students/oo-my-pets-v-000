@@ -73,20 +73,18 @@ class Owner
 
   def sell_pets
     @pets.each do |type, pet|
-      binding.pry
-       pet.each{ |pet| name.clear }
-           pet.mood="nervous"
+       pet.each{ |pet| pet.mood="nervous" }
+           pet.clear
     end
   end
 
   def list_pets
-    @pets[:fishes].each do |pet|
-      @pets[:cats].each do |pet|
-        @pets[:dogs].each do |pet|
-      puts "#{type} and #{pet}"
-    end
-  end
-end
-end
+    number_of_fish=@pets[:fishes].size
+    number_of_dogs=@pets[:dogs].size
+    number_of_cats=@pets[:cats].size
+    "I have #{number_of_fish} fish, #{number_of_dogs} dog(s), and #{number_of_cats} cat(s)."
+        # binding.pry
+    # end
+ end
 
 end
