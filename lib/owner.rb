@@ -7,10 +7,9 @@ class Owner
 
   @@owners = []
 
-  def initialize(owner)
-    @owner   = owner
+  def initialize(species)
+    @species   = species
     @@owners << self
-    @species = "human"
     @pets    = { fishes: [], dogs: [], cats: [] }
   end
 
@@ -67,19 +66,7 @@ class Owner
   end
 
   def list_pets
-    fish_count = 0
-    dog_count  = 0
-    cat_count  = 0
-    self.pets.each do |key, pets_array|
-      if key == :fishes
-        fish_count = self.pets[key].length
-      elsif key == :dogs
-        dog_count = self.pets[key].length
-      elsif key == :cats
-        cat_count = self.pets[key].length
-      end
-    end
-    "I have #{fish_count} fish, #{dog_count} dog(s), and #{cat_count} cat(s)."
+    "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
   end
 
 end
