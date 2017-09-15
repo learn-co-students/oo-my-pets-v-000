@@ -1,6 +1,6 @@
 class Owner
 
-  attr_accessor :pets, :name, :mood
+  attr_accessor :pets, :name
 
   attr_reader :species
 
