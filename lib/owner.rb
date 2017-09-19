@@ -49,6 +49,7 @@ class Owner
       dog.mood = "happy"
     end
   end
+<<<<<<< HEAD
 
   def play_with_cats
     @pets[:cats].each do |cat|
@@ -83,4 +84,6 @@ class Owner
   #   end
   #   sentence.join(", and ")
 
+=======
+>>>>>>> 858a57f8b803ede2a48425426881b96e8662b93e
 end
