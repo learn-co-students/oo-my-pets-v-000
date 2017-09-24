@@ -80,4 +80,10 @@ class Owner
     end
     "I have #{fish} fish, #{dogs} dog(s), and #{cats} cat(s)."
   end
+
+  #### ALTERNATIVE ####
+  # def list_pets
+  #   "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
+  # end
+
 end
