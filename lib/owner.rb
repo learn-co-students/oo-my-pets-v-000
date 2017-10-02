@@ -8,8 +8,10 @@ attr_reader :species
 @@owners = []
 
   def initialize(name, species)
+    @name = name
     @species = species
     @@owners << self
+    #how do I get the species into the right hash?
     @pets ={:fishes => [], :dogs => [], :cats => []}
   end
 
@@ -58,6 +60,9 @@ attr_reader :species
   end
 
   def list_pets
+    pets[dogs]
+    pets[fishes]
+    pets[cats]
 
 #how do I list the contents of the array?
   #  pets.each do |type, name|
