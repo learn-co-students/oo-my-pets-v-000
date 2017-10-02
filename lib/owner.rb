@@ -5,17 +5,23 @@ class Owner
 attr_accessor :name, :pets
 attr_reader :species
 
-@@owners = []
+OWNERS = []
+#how do you choose between a class constant and a class variable?
 
-  def initialize(name, species)
-    @name = name
+  def initialize(species)
+    # how does the instance get its name?
     @species = species
-    @@owners << self
+    OWNERS << self
+
     #how do I get the species into the right hash?
     @pets ={:fishes => [], :dogs => [], :cats => []}
   end
 
-
+  def name=(name)
+    raise Error
+   # like in video, what's the syntax?
+   @name = name
+   #owner.add_name?? 
   #can read but not write/can't be changed
 
   def say_species
@@ -73,15 +79,15 @@ attr_reader :species
 
 
  def self.all
-   @@owners
+   OWNERS
  end
 
  def self.reset_all
-   @@owners = []
+   OWNERS.clear
  end
 
  def self.count
-   @@owners.size
+   OWNERS.size
  end
 
 
