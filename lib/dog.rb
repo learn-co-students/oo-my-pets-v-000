@@ -1,12 +1,13 @@
+require 'pry'
 class Dog
   # code goes here
   attr_accessor :mood
-  attr_reader :dog_name
+  attr_reader :name
 
-  def initialize(dog_name)
-    @dog_name = dog_name
-    mood = "nervous"
-    pets[dogs] << self
+  def initialize(name, mood="nervous")
+    @name = name
+    @mood = "nervous"
+
   end
 
 end

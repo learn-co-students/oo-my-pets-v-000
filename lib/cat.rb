@@ -1,13 +1,16 @@
+
+
 class Cat
-  # code goes here
+
   attr_accessor :mood
-  attr_reader :cat_name
+  attr_reader :name
 
-  def initialize(cat_name)
-    cat = Cat.new(cat_name)
-    mood = "nervous"
-    pets[cats] << self
 
+  def initialize(name, mood="nervous")
+    @name = name
+    @mood = mood
   end
 
 end
+
+#how to include the error if name is changed --
