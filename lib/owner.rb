@@ -8,28 +8,31 @@ attr_reader :species
 OWNERS = []
 #how do you choose between a class constant and a class variable?
 
-  def initialize(species)
-    # how does the instance get its name?
-    @species = species
-    OWNERS << self
+ def self.all
+   OWNERS
+ end
 
-    #how do I get the species into the right hash?
-    @pets ={:fishes => [], :dogs => [], :cats => []}
+ def self.reset_all
+   OWNERS.clear
+ end
+
+ def self.count
+   OWNERS.size
+ end
+
+  def initialize(species)
+    @species = species
+    @name = name
+    self.pets= {:fishes => [], :dogs => [], :cats => []}
+    OWNERS << self
   end
 
-  def name=(name)
-    raise Error
-   # like in video, what's the syntax?
-   @name = name
-   #owner.add_name?? 
-  #can read but not write/can't be changed
 
   def say_species
-    puts  "I am a #{@species}"
+    "I am a #{species}."
   end
 
   def buy_fish(name)
-    #purchase fish that is instance of Fish class
     fish = Fish.new(name)
     pets[:fishes] << fish
   end
@@ -44,51 +47,33 @@ OWNERS = []
     pets[:dogs] << dog
   end
 
-  def walk_dogs(mood)
-    pets[:dogs].each {|d| d.mood="happy" }
+  def walk_dogs
+    pets[:dogs].each {|dog| dog.mood="happy" }
   end
 
 
-  def play_with_cats(mood= "happy")
-    pets[:cats].each {|c| c.mood}
+  def play_with_cats
+    pets[:cats].each {|c| c.mood="happy"}
   end
 
-  def feed_fish(mood="happy")
-    pets[:fishes].each {|fishes, name| name.mood}
+  def feed_fish
+    pets[:fishes].each {|f| f.mood="happy"}
   end
 
   def sell_pets
-#array - 1 pets[xxx] how do I get to each one?
-  pets.each do |animal, name|
-    animal.each {|animal,name| name.mood = "nervous"}
+    pets.each do |type, pets|
+      pets.each {|name| name.mood = "nervous"}
     end
-    pets.empty
+    pets.clear
   end
 
   def list_pets
-    pets[dogs]
-    pets[fishes]
-    pets[cats]
 
-#how do I list the contents of the array?
-  #  pets.each do |type, name|
-    #  puts type
-    #  end
-    puts "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
+    pets.each do |type, pets|
+      pets
+    end
+     "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
   end
-
-
- def self.all
-   OWNERS
- end
-
- def self.reset_all
-   OWNERS.clear
- end
-
- def self.count
-   OWNERS.size
- end
 
 
 end
