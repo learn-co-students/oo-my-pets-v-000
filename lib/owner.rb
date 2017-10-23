@@ -22,7 +22,7 @@ class Owner
   end
 
   def say_species
-    "I am a #{self.species}."
+    "I am a #{species}."
   end
 
   def pets
@@ -31,17 +31,14 @@ class Owner
 
   def buy_fish(name)
     pets[:fishes] << Fish.new(name)
-    pets
   end
 
   def buy_dog(name)
     pets[:dogs] << Dog.new(name)
-    pets
   end
 
   def buy_cat(name)
     pets[:cats] << Cat.new(name)
-    pets
   end
 
   def walk_dogs
@@ -70,11 +67,11 @@ class Owner
       pet.each do |value|
         value.mood = "nervous"
       end
+      #OR can just put this one liner instead of 2nd set of code below
+      # pet.clear
     end
     pets.each do |type, pet|
-      pet.delete_if do |value|
-        value.mood == "nervous"
-      end
+      pets.delete(type)
     end
     pets
   end

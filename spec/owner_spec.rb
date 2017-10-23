@@ -149,7 +149,7 @@ describe Owner do
           :cats => [Cat.new("Mittens"), tabby]
         }
         owner.sell_pets
-        owner.pets.all? {|type, pets| expect(pets.empty?).to eq(true) }
+        owner.pets.each {|type, pets| expect(pets.empty?).to eq(true) }
         [fido, tabby, nemo].each { |o| expect(o.mood).to eq("nervous") }
       end
     end
