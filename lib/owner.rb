@@ -1,4 +1,3 @@
-
 class Owner
   OWNERS = []
   attr_reader :species
