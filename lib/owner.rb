@@ -14,19 +14,16 @@ class Owner
     "I am a #{self.species}."
   end
 
-  def buy_fish(fish_name)
-    fish = Fish.new(fish_name)
-    self.pets[:fishes] << fish
+  def buy_fish(name)
+    self.pets[:fishes] << Fish.new(name)
   end
 
-  def buy_cat(cat_name)
-    cat = Cat.new(cat_name)
-    self.pets[:cats] << cat
+  def buy_dog(name)
+    pets[:dogs] << Dog.new(name)
   end
 
-  def buy_dog(dog_name)
-    dog = Dog.new(dog_name)
-    self.pets[:dogs] << dog
+  def buy_cat(name)
+    pets[:cats] << Cat.new(name)
   end
 
   def walk_dogs
@@ -49,8 +46,7 @@ class Owner
   end
 
   def list_pets
-    p = self.pets.values
-      "I have #{p[0].length} fish, #{p[1].length} dog(s), and #{p[2].length} cat(s)."
+    "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
   end
 
   def self.all
@@ -64,7 +60,4 @@ class Owner
   def self.count
     self.all.size
   end
-
-
-
 end
