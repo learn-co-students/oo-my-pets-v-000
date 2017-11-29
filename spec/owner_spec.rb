@@ -2,7 +2,7 @@ require_relative 'spec_helper.rb'
 
 describe Owner do
 
-  let(:owner) { Owner.new("human") }
+  let(:owner) { Owner.new("Katie") }
   let(:fish) { Fish.new("Nemo") }
   let(:cat) { Cat.new("Crookshanks") }
   let(:dog) { Dog.new("Fido") }
