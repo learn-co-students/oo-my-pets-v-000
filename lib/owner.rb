@@ -9,7 +9,13 @@ require 'pry'
 
 class Owner
   # code goes here
+  attr_accessor :pets
+  attr_reader :name
+  @@owners = []
   def initialize(name)
-  
+    @pets = {fishes: [], cats: [], dogs: []}
   end 
+  
+  def self.all 
+    @@owners
 end
