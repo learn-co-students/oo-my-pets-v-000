@@ -6,7 +6,10 @@ require 'pry'
   # the mood can change
 class Cat
   # code goes here
-  def initialize(name, mood)
-  
+  attr_reader :name
+  attr_writer :mood
+  def initialize(name)
+    @name = name 
+    @mood
   end 
 end
