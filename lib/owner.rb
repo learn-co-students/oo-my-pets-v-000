@@ -45,6 +45,6 @@ class Owner
  # created species method as attr_reader above
   
   def say_species 
-    puts "I am " + @species + " ."
+    puts "I am " + "#{@species}" + " ."
   end 
 end
