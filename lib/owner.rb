@@ -53,8 +53,40 @@ class Owner
   end 
   
   def buy_fish(fish_name) 
-    binding.pry
     # add fishes to pets array 
-    # this method shows a Fish instance 
+    # this method should display a Fish instance
+    # when you assign something equal to something i.e. @pets[:fish] = fish_name - this will override with new data everytime
+    @pets[:fishes] << Fish.new(fish_name)
   end 
+  
+  def buy_cat(cat_name)
+    @pets[:cats] << Cat.new(cat_name)
+  end 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 end
