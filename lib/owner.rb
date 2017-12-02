@@ -10,7 +10,7 @@ require 'pry'
 class Owner
   # code goes here
   attr_accessor :pets
-  attr_reader :name
+  attr_reader :name, :species
   @@owners = []
 # create class methods for 
 # - all 
@@ -19,7 +19,8 @@ class Owner
 
   def initialize(name)
     @pets = {fishes: [], cats: [], dogs: []}
-    @@owners << self 
+    @@owners << self
+    @species = "human" 
   end 
   
   def self.all 
@@ -40,9 +41,6 @@ class Owner
     # - species 
     # - say_species 
     # - name 
-    # - pets 
-  def species 
-    
-  end 
-  
+    # - pets  
+ # created species method as attr_reader above  
 end
