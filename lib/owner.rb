@@ -42,5 +42,9 @@ class Owner
     # - say_species 
     # - name 
     # - pets  
- # created species method as attr_reader above  
+ # created species method as attr_reader above
+  
+  def say_species 
+    @species
+  end 
 end
