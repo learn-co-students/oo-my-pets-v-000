@@ -70,7 +70,11 @@ class Owner
   def walk_dogs
     # this method will change the dog's mood 
     # you'll need to access mood 
-    binding.pry
+    # where is the mood?
+    
+    dog = Dog.new(name)
+    dog.mood = "happy"
+#    @pets[:dogs] << dog_mood
   end 
   
   
