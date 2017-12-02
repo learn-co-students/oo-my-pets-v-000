@@ -52,5 +52,9 @@ class Owner
     @name
   end 
   
-  
+  def buy_fish(fish_name) 
+    binding.pry
+    # add fishes to pets array 
+    # this method shows a Fish instance 
+  end 
 end
