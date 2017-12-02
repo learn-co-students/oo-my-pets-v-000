@@ -9,8 +9,8 @@ require 'pry'
 
 class Owner
   # code goes here
-  attr_accessor :pets
-  attr_reader :name, :species
+  attr_accessor :pets, :name
+  attr_reader :species
   @@owners = []
 # create class methods for 
 # - all 
@@ -45,6 +45,12 @@ class Owner
  # created species method as attr_reader above
   
   def say_species 
-    puts "I am " + "#{@species}" + " ."
+     "I am a " + "#{@species}" + "."
   end 
+  
+  def name 
+    @name
+  end 
+  
+  
 end
