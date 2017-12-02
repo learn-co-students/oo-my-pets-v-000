@@ -63,6 +63,15 @@ class Owner
     @pets[:cats] << Cat.new(cat_name)
   end 
   
+  def buy_dog(dog_name) 
+    @pets[:dogs] << Dog.new(dog_name)
+  end 
+  
+  def walk_dogs
+    # this method will change the dog's mood 
+    # you'll need to access mood 
+    binding.pry
+  end 
   
   
   
