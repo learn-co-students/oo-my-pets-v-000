@@ -78,7 +78,9 @@ class Owner
   def play_with_cats 
     # changes mood attr to "happy"
     # return string "happy"
-    
+    @pets[:cats].collect do |c| 
+      c.mood = "happy"
+    end 
   end
     
     
