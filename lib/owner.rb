@@ -75,7 +75,20 @@ class Owner
     end
   end 
   
-  
+  def play_with_cats 
+    # changes mood attr to "happy"
+    # return string "happy"
+    
+  end
+    
+    
+    
+    
+    
+    
+    
+    
+    
   
   
   
