@@ -92,17 +92,35 @@ class Owner
   def sell_pets
     # each pet mood is set to happy in the test 
     # change mood back to nervous
-   binding.pry
+   
 #    # reset all on pets hash or pets arrays
 #    # change mood to nervous
-#    @pets[:dogs].find do |f|
-#      if f.mood == "happy"
-#        f.mood = "nervous"
-#      end
-#    end
-    @pets = {fishes: [], cats: [], dogs: []}
+   
+     @pets[:dogs].collect do |f|
+      if f.mood == "happy"
+        f.mood = "nervous"
+      end
+     end 
+    @pets[:fishes].collect do |c|
+      if c.mood == "happy"
+        c.mood = "nervous"
+      end
+    end
+      @pets[:cats].collect do |f|
+      if f.mood == "happy"
+        f.mood = "nervous"
+      end
+    end
+     @pets = {fishes: [], cats: [], dogs: []}
   end
     
+  def list_pets
+    # this method should show what individual pets were created
+    binding.pry
+    buy_fish(fish_name)
+    buy_cat(cat_name)
+    buy_dog(dog_name)
+  end
     
     
     
