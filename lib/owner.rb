@@ -82,6 +82,18 @@ class Owner
       c.mood = "happy"
     end 
   end
+  
+  def feed_fish
+    @pets[:fishes].collect do |feed|
+      feed.mood = "happy"
+    end
+  end 
+  
+  def sell_pets
+    # each pet mood is set to happy in the test 
+    # change mood back to nervous
+    binding.pry
+  end
     
     
     
