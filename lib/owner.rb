@@ -116,10 +116,13 @@ class Owner
     
   def list_pets
     # this method should show what individual pets were created
-    binding.pry
-    buy_fish(fish_name)
-    buy_cat(cat_name)
-    buy_dog(dog_name)
+    
+    # how many pets of each type 
+    # set variable for each type of pet
+    pet_fish = @pets[:fishes].count
+    pet_cat = @pets[:cats].count
+    pet_dog = @pets[:dogs].count
+     "I have " + "#{pet_fish}" + " fish, " + "#{pet_dog}" + " dog(s)," + " and " + "#{pet_cat}" + " cat(s)."  
   end
     
     
