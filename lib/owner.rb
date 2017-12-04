@@ -69,12 +69,10 @@ class Owner
   
   def walk_dogs
     # this method will change the dog's mood 
-    # you'll need to access mood 
-    # where is the mood?
-    
-    dog = Dog.new(name)
-    dog.mood = "happy"
-#    @pets[:dogs] << dog_mood
+    # you'll need to access mood, set to "happy" 
+    walk = @pets[:dogs].collect do |f|
+      f.mood = "happy"
+    end
   end 
   
   
