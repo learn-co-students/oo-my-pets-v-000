@@ -92,7 +92,15 @@ class Owner
   def sell_pets
     # each pet mood is set to happy in the test 
     # change mood back to nervous
-    binding.pry
+   binding.pry
+#    # reset all on pets hash or pets arrays
+#    # change mood to nervous
+#    @pets[:dogs].find do |f|
+#      if f.mood == "happy"
+#        f.mood = "nervous"
+#      end
+#    end
+    @pets = {fishes: [], cats: [], dogs: []}
   end
     
     
