@@ -31,9 +31,6 @@ attr_reader :species
     "I am a #{@species}."
   end
 
-  def pets    #initialize with pets attribute
-    @pets
-  end
 
   def buy_fish(name)
     name = Fish.new(name)
