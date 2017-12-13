@@ -13,8 +13,7 @@ describe Owner do
     end
 
     it "can count how many owners have been created" do
-      Owner.reset_all
-      Owner.new("human")
+      Owner.count
       expect(Owner.count).to eq(1)
     end
 
