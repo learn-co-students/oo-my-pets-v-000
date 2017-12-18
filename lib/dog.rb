@@ -1,3 +1,10 @@
 class Dog
-  # code goes here
-end
+    attr_reader :name,:species
+    attr_accessor :mood
+
+    def initialize(name)
+      @name=name
+      @mood="nervous"
+    end
+
+  end
