@@ -73,19 +73,7 @@ def sell_pets
 end
 
 def list_pets
-  fish_count = 0
-  dogs_count = 0
-  cats_count = 0
-  self.pets.each do |k, v|
-    if k == :fishes
-      fish_count = v.count
-    elsif k == :dogs
-      dogs_count = v.count
-    elsif k == :cats
-      cats_count = v.count
-    end
-  end
-  "I have #{fish_count} fish, #{dogs_count} dog(s), and #{cats_count} cat(s)."
+  "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
 end
 
 end
