@@ -94,7 +94,6 @@ class Owner
       self.pets.each do |animals, array|
         array.each do |pet|
           pet.mood = "nervous"
-          # binding.pry
         end #array each
       end #each
       self.pets.clear
