@@ -65,6 +65,8 @@ attr_reader :species
   end
 
   def sell_pets
+    self.pets.all.clear
+
   end
 
   def list_pets
