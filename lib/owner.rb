@@ -33,7 +33,7 @@ attr_reader :species
 
 #STILL BROKEN FROM HERE DOWN
   def say_species
-    puts "I am a #{species}."
+    puts "I am a #{self.species}."
   end
 
   def buy_fish(name)
