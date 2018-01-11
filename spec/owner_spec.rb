@@ -1,4 +1,5 @@
 require_relative 'spec_helper.rb'
+require 'pry'
 
 describe Owner do
 
@@ -32,6 +33,7 @@ describe Owner do
 
     describe "#species" do
       it "initializes with a species" do
+        # binding.pry
         expect(owner.species).to eq("human")
       end
 
@@ -42,6 +44,7 @@ describe Owner do
 
     describe "#say_species " do
       it "can say its species" do
+        # binding.pry
         expect(owner.say_species).to eq("I am a human.")
       end
     end
@@ -56,6 +59,7 @@ describe Owner do
     describe "#pets" do
 
       it "is initialized with a pets attribute as a hash with 3 keys" do
+        # binding.pry
         expect(owner.pets).to eq({:fishes => [], :dogs => [], :cats => []})
       end
     end
@@ -64,6 +68,7 @@ describe Owner do
       it 'can buy a fish that is an instance of the Fish class' do
         expect(owner.pets[:fishes].count).to eq(0)
         owner.buy_fish("Bubbles")
+        # binding.pry
         owner.pets[:fishes].each do |fish|
           expect(fish).to be_a(Fish)
         end
@@ -115,6 +120,7 @@ describe Owner do
         dog = Dog.new("Daisy")
         owner.pets[:dogs] << dog
         owner.walk_dogs
+        # binding.pry
         expect(dog.mood).to eq("happy")
       end
     end
