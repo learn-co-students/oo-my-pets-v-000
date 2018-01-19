@@ -24,5 +24,4 @@ describe Cat do
     cat.mood = "playful"
     expect(cat.mood).to eq("playful")
   end
-
 end
