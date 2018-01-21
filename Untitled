@@ -1,0 +1,28 @@
+@pets.each { |species, pet| "#{species} #{pet}" }
+
+@pets.each_key { |key| key }
+
+@pets.each_key { |_key, value| value.each { |pet| pet.mood = 'happy' } }
+
+
+@pets.each_key { |_key, value| value}
+
+@pets.keys { |key| key.each { |pet| pet.mood = 'happy' }}
+
+@pets.keys { |key| key.each { |pet| pet.mood = 'sad af' }}
+
+@pets.keys { |key| key}.
+
+
+@pets[:dogs].each { |dog| dog.mood = 'happy' }
+
+@pets.keys { |key| @pets[key]}
+
+
+@pets.keys.each { |pet, value| pet.value = 'sad af' }
+
+
+
+@pets.each do |key, value| puts "******#{key} *********  maps to #{value}+++++++++++++" end
+
+@pets.each { |key, value| puts "**#{key}>>#{value}++"; puts value.each{|i| i}} value.each{|i|puts"√√√√#{i}√√√√"}}
