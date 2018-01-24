@@ -1,3 +1,23 @@
+owner
+   knows all its pets
+   able to buy a pet
+   sets name of pet (pet can't change)
+   change a pets mood
+   sell all of its pets
+pet
+  has name
+  has an owner
+
+
+
+
+
+
+
+
+
+
+
 # My Pets
 
 ## Objective
