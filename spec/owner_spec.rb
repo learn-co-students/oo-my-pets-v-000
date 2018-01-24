@@ -7,7 +7,7 @@ describe Owner do
   let(:cat) { Cat.new("Crookshanks") }
   let(:dog) { Dog.new("Fido") }
 
-  context 'Class methods' do
+  context 'Class methods', :classonly do
     it "keeps track of the owners that have been created" do
       expect(Owner.all).to include(owner)
     end
