@@ -1,3 +1,83 @@
 class Owner
   # code goes here
+  attr_accessor :name
+  attr_reader :species
+  attr_writer :pets
+  @@all = []
+
+  def initialize(species)
+    @species = species
+    @@all << self
+    @pets = {fishes: [], cats: [], dogs: []}
+  end
+
+  def self.all
+    @@all
+  end
+
+  def self.reset_all
+    @@all.clear
+  end
+
+  def self.count
+    @@all.size
+  end
+
+  def say_species
+    "I am a #{@species}."
+  end
+
+  def pets
+    @pets
+  end
+
+  def count
+    @pets.size
+  end
+
+  def buy_fish(fish_name)
+    fish_name = Fish.new(fish_name)
+    @pets[:fishes] << fish_name
+  end
+
+  def buy_cat(cat_name)
+    cat_name = Cat.new(cat_name)
+    @pets[:cats] << cat_name
+  end
+
+  def buy_dog(dog_name)
+    dog_name = Dog.new(dog_name)
+    @pets[:dogs] << dog_name
+  end
+
+  def walk_dogs
+    self.pets[:dogs].each do |doggo|
+      doggo.mood = "happy"
+    end
+  end
+
+  def play_with_cats
+    self.pets[:cats].each do |cat|
+      cat.mood = "happy"
+    end
+  end
+
+  def feed_fish
+    self.pets[:fishes].each do |fishy|
+      fishy.mood = "happy"
+    end
+  end
+
+  def list_pets
+    "I have #{@pets[:fishes].size} fish, #{@pets[:dogs].size} dog(s), and #{@pets[:cats].size} cat(s)."
+  end
+
+  def sell_pets
+    self.pets.each do |animal, pet_array|
+      pet_array.each do |pet_name|
+        pet_name.mood = "nervous"
+      end
+      pet_array.clear
+    end
+  end
 end
