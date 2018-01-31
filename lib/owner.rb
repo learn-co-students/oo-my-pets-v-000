@@ -1,35 +1,30 @@
 class Owner
-  # code goes here
+
   OWNERS = []
-  attr_accessor :name, :pets
+
+  attr_accessor :pets, :name
   attr_reader :species
 
-  def self.reset_all
-    OWNERS.clear
+  def initialize(species)
+    @species = species
+    @pets = {fishes: [], cats: [], dogs: []}
+    OWNERS << self
+  end
+
+  def say_species
+    "I am a #{@species}."
   end
 
   def self.all
     OWNERS
   end
 
+  def self.reset_all
+    OWNERS.clear
+  end
+
   def self.count
     OWNERS.size
-  end
-
-
-  def initialize(species)
-    @species = species
-    @pets = {
-      fishes: [],
-      dogs: [],
-      cats: []
-    }
-
-    OWNERS << self
-  end
-
-  def say_species
-    "I am a #{species}."
   end
 
   def buy_fish(name)
@@ -51,25 +46,32 @@ class Owner
   end
 
   def play_with_cats
-    self.pets[:cats].collect {|cat| cat.mood = "happy"}
+    pets[:cats].each do |cat|
+      cat.mood = "happy"
+    end
   end
 
   def feed_fish
-    self.pets[:fishes].collect {|fish| fish.mood = "happy"}
+    pets[:fishes].each do |fish|
+      fish.mood = "happy"
+    end
   end
 
   def sell_pets
-    pets.collect do |species, pets|
-      pets.collect { |pet| pet.mood = "nervous"}
+    pets.each do |species, animals|
+      animals.each do |animal|
+        animal.mood = "nervous"
+      end
+      animals.clear
     end
-    pets.clear
   end
 
   def list_pets
-    "I have #{pets[:fishes].count} fish, #{self.pets[:dogs].count} dog(s), and #{self.pets[:cats].count} cat(s)."
+    "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
   end
 
-# don't havwe to use self.
+
+
 
 
 end
