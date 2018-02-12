@@ -1,14 +1,12 @@
 class Owner
-
-  attr_accessor :name, :pets
+  attr_accessor :pets, :name
   attr_reader :species
-
   @@all = []
 
   def initialize(name)
     @name = name
     @species = "human"
-    @pets = {fishes: [], dogs: [], cats: []}
+    @pets = {fishes: [], cats: [], dogs: []}
     @@all << self
   end
 
@@ -21,7 +19,7 @@ class Owner
   end
 
   def self.count
-    self.all.size
+    self.all.count
   end
 
   def say_species
@@ -29,18 +27,18 @@ class Owner
   end
 
   def buy_fish(name)
-    fish = Fish.new(name)
-    self.pets[:fishes] << fish
+    new_fish = Fish.new(name)
+    self.pets[:fishes] << new_fish
   end
 
   def buy_cat(name)
-    cat = Cat.new(name)
-    self.pets[:cats] << cat
+    new_cat = Cat.new(name)
+    self.pets[:cats] << new_cat
   end
 
   def buy_dog(name)
-    dog = Dog.new(name)
-    self.pets[:dogs] << dog
+    new_dog = Dog.new(name)
+    self.pets[:dogs] << new_dog
   end
 
   def walk_dogs
@@ -56,16 +54,14 @@ class Owner
   end
 
   def sell_pets
-    self.pets.each do |type, pets|
-      pets.each {|pet| pet.mood = "nervous"}
-      pets.clear
+    self.pets.each do |type, comps|
+      comps.each {|pet| pet.mood = "nervous"}
+      comps.clear
     end
   end
 
   def list_pets
-    numbers= []
-    self.pets.each {|type, pets| numbers << pets.count}
-    "I have #{numbers[0]} fish, #{numbers[1]} dog(s), and #{numbers[2]} cat(s)."
+    "I have #{self.pets[:fishes].count} fish, #{self.pets[:dogs].count} dog(s), and #{self.pets[:cats].count} cat(s)."
   end
 
 end
