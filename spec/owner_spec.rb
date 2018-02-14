@@ -1,3 +1,4 @@
+require 'pry'
 require_relative 'spec_helper.rb'
 
 describe Owner do
@@ -118,6 +119,7 @@ describe Owner do
         expect(dog.mood).to eq("happy")
       end
     end
+
 
     describe "#play_with_cats" do
       it "plays with the cats which makes the cats moods happy" do
