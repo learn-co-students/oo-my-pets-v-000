@@ -61,24 +61,17 @@ class Owner
     change_mood(:fishes, "happy")
   end
 
-  def reset_pets
-    self.pets.each_key{|pet_kind| self.pets[:"#{pet_kind}"].clear}
-  end
-
   def sell_pets
-    self.pets.each_key{|pet_kind| change_mood(:"#{pet_kind}", "nervous")}
-    reset_pets
-  end
-
-  def pet_count
-    pet_count = []
-    self.pets.each_key{|pet_kind| pet_count << self.pets[:"#{pet_kind}"].count}
-    pet_count
+    self.pets.each do |species, animals|
+      animals.each do |animal|
+        animal.mood = "nervous"
+      end
+      animals.clear
+    end
   end
 
   def list_pets
-    pet_count = self.pet_count
-    return "I have #{pet_count[0]} fish, #{pet_count[1]} dog(s), and #{pet_count[2]} cat(s)."
+    return "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
   end
 
 end
