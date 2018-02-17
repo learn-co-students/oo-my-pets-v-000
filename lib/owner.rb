@@ -30,7 +30,7 @@ class Owner
   end
 
   def say_species
-    "I am a human."
+    "I am a #{@species}."
   end
 
   def buy_fish(fish_name)
@@ -46,7 +46,6 @@ class Owner
   end
 
   def walk_dogs
-    # binding.pry
     self.pets[:dogs].each {|dog| dog.mood = "happy"}
   end
 
