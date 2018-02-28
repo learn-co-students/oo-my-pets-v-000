@@ -62,6 +62,23 @@ class Owner
       end
     end
 
-
+	def sell_pets
+		pets.each do |animal, animal_array|
+			animal_array.each do |pet|
+				pet.mood = "nervous"
+			end
+			animal_array.clear
+		end
+	end
+	
+	
+# 	"I have 2 fish,3 dog(s), and 1 cat(s)."
+	def list_pets
+		fishes = pets[:fishes].count
+		dogs = pets[:dogs].count
+		cats = pets[:cats].count
+		return "I have #{fishes} fish, #{dogs} dog(s), and #{cats} cat(s)."
+	end
+	
 
 end
