@@ -1,5 +1,3 @@
-require 'pry'
-
 class Owner
   attr_accessor :owner, :pets, :mood
   attr_reader :name
@@ -63,7 +61,7 @@ class Owner
     self.pets[:fishes].map {|x| x.mood=("happy")}
   end
 
-  def sell_pets # refactor this method
+  def sell_pets
     self.pets[:dogs].map {|x| x.mood=("nervous")}
     self.pets[:fishes].map {|x| x.mood=("nervous")}
     self.pets[:cats].map {|x| x.mood=("nervous")}
@@ -72,7 +70,7 @@ class Owner
     self.pets[:cats].clear
   end
 
-  def list_pets # refactor this method
+  def list_pets
     a = self.pets[:fishes].count
     b = self.pets[:dogs].count
     c = self.pets[:cats].count
