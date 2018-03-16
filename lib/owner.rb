@@ -1,3 +1,5 @@
+require 'pry'
+
 class Owner
   attr_reader :species
   attr_accessor :name, :pets
@@ -36,6 +38,18 @@ class Owner
 
   def feed_fish
     @pets[:fishes].each{|pet| pet.mood = "happy"}
+    puts self
+  end
+
+  def sell_pets
+    @pets.each do |type, pets|
+      @pets[type] = []
+      pets.each {|pet| pet.mood = "nervous"}
+    end
+  end
+
+  def list_pets
+    "I have #{@pets[:fishes].length} fish, #{@pets[:dogs].length} dog(s), and #{@pets[:cats].length} cat(s)."
   end
 
   def self.all
