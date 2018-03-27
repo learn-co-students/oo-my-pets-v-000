@@ -40,12 +40,8 @@ end
 
   #pet methods
 
-  def pets_counter(pet_type)
-    self.pets[:(pet_type)].size
-  end
-
   def list_pets
-    "I have #{pets_counter(fishes)}, #{self.pets[:dogs].size} dog(s), and #{self.pets[:cats].size} cat(s)."
+    "I have #{self.pets[:fishes].size} fish, #{self.pets[:dogs].size} dog(s), and #{self.pets[:cats].size} cat(s)."
   end
 
   def buy_cat(name)
