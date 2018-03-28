@@ -2,7 +2,7 @@ require "pry"
 
 class Owner
 
-  attr_accessor :name, :pets
+  attr_accessor :name, :pets, :fishes
   attr_reader :species
 
   @@all = []
@@ -30,7 +30,14 @@ class Owner
 
   def say_species
     # binding.pry
-    # "I am a #{@species}."
+    "I am a #{@species}."
   end
-  # code goes here
+
+  def buy_fish(name)
+    
+    self.pets[:fishes].each do |fish|
+    end
+
+  end
+
 end

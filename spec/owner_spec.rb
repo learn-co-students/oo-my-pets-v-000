@@ -1,4 +1,4 @@
-"require_relative 'spec_helper.rb'
+require_relative 'spec_helper.rb'
 
 describe Owner do
 
@@ -27,8 +27,6 @@ describe Owner do
       expect(owner).to be_a(Owner)
     end
   end
-end
-
 
   context 'instance methods' do
 
