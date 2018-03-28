@@ -11,15 +11,20 @@ class Owner
     @@all
   end
 
-  def self.count
-    # self.all = 0
-    self.all.count
-  end
-
-  def self.clear_all
-    @@all =[]
+  def self.reset_all
+    self.all.delete
 
   end
+
+  # def self.count
+  #   # self.all = 0
+  #   self.all.count
+  # end
+  #
+  # def self.clear_all
+  #   @@all =[]
+  #
+  # end
 
   def initialize(species)
     @species = species
