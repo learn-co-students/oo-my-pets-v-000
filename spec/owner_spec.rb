@@ -27,6 +27,8 @@ describe Owner do
       expect(owner).to be_a(Owner)
     end
   end
+end
+
 
   context 'instance methods' do
 
@@ -166,3 +168,4 @@ describe Owner do
       end
     end
   end
+end
