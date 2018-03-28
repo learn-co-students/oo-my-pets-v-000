@@ -21,4 +21,9 @@ class Owner
     @@all =[]
   end
   
+  def self.say_species
+    @species = species
+    
+  end
+  
 end
