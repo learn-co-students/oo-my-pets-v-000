@@ -11,20 +11,14 @@ class Owner
     @@all
   end
 
-  def self.reset_all
-    self.all.delete
-
+  def self.count
+    # self.all = 0
+    self.all.count
   end
 
-  # def self.count
-  #   # self.all = 0
-  #   self.all.count
-  # end
-  #
-  # def self.clear_all
-  #   @@all =[]
-  #
-  # end
+  def self.reset_all
+    self.all.clear
+  end
 
   def initialize(species)
     @species = species
@@ -34,9 +28,9 @@ class Owner
 
   end
 
-  # def species
-  #   @species
-  #
-  # end
+  def say_species
+    # binding.pry
+    # "I am a #{@species}."
+  end
   # code goes here
 end
