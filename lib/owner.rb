@@ -2,7 +2,7 @@ require "pry"
 
 class Owner
 
-  attr_accessor :name, :pets, :fishes
+  attr_accessor :name, :pets, :fishes, :cats, :dogs, :mood
   attr_reader :species
 
   @@all = []
@@ -34,10 +34,47 @@ class Owner
   end
 
   def buy_fish(name)
-    
-    self.pets[:fishes].each do |fish|
-    end
-
+    self.pets[:fishes] << fish = Fish.new(name)
+    # binding.pry
+    self.pets[:fishes]
   end
+
+  def buy_cat(name)
+    self.pets[:cats] << cat = Cat.new(name)
+    self.pets[:cats]
+  end
+
+  def buy_dog(name)
+    self.pets[:dogs] << dog = Dog.new(name)
+    self.pets[:dogs]
+  end
+
+  def walk_dogs
+    # binding.pry
+    self.pets[:dogs].each do |dog|
+      dog.mood = "happy"
+    end
+  end
+
+  def play_with_cats
+    self.pets[:cats].each do |cat|
+      cat.mood = "happy"
+    end
+  end
+
+  def feed_fish
+    self.pets[:fishes].each do |fish|
+      fish.mood = "happy"
+    end
+  end
+
+  def sell_pets
+    # binding.pry
+    self.pets.each do |type, pet|
+        if pet.clear
+          self.mood = "nervous"
+      end
+
+    end
 
 end
