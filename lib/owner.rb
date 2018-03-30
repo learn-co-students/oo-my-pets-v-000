@@ -25,7 +25,6 @@ class Owner
     @pets = {fishes: [], cats: [], dogs: []}
 
     @@all << self
-
   end
 
   def say_species
@@ -71,10 +70,16 @@ class Owner
   def sell_pets
     # binding.pry
     self.pets.each do |type, pet|
-        if pet.clear
-          self.mood = "nervous"
+        pet.each do |p|
+          p.mood = "nervous"
+        end
+        pet.clear
+          # binding.pry
       end
-
     end
 
+    def list_pets
+      "I have #{pets[:fishes].length} fish, #{pets[:dogs].length} dog(s), and #{pets[:cats].length} cat(s)."
+
+    end
 end
