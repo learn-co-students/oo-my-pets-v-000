@@ -1,4 +1,5 @@
 require_relative 'spec_helper.rb'
+require 'pry'
 
 describe Owner do
 
@@ -15,6 +16,7 @@ describe Owner do
     it "can count how many owners have been created" do
       Owner.reset_all
       Owner.new("human")
+      
       expect(Owner.count).to eq(1)
     end
 
