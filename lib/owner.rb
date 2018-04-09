@@ -1,5 +1,3 @@
-require 'pry'
-
 class Owner
   attr_accessor :name, :pets
   attr_reader :species
@@ -38,7 +36,7 @@ class Owner
   end
 
   def buy_dog(dog_name)
-    dog = Dog.new(dog_name)
+    dog= Dog.new(dog_name)
     pets[:dogs] << dog
   end
 
@@ -54,9 +52,10 @@ class Owner
     end
   end
 
+
   def feed_fish
     pets[:fishes].each do |fish|
-      fish.mood = "happy"
+      fish.mood= "happy"
     end
   end
 
@@ -72,4 +71,5 @@ class Owner
   def list_pets
     return "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
   end
+
 end
