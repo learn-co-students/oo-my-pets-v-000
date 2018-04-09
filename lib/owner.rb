@@ -1,15 +1,14 @@
 require 'pry'
 
 class Owner
-
   attr_accessor :name, :pets
   attr_reader :species
 
-def initialize(species)
-    @name = name
+  @@all = []
+  def initialize(species = "human")
     @species = species
+    @pets = {fishes: [], cats: [], dogs:[]}
     @@all << self
-    @pets = {fishes: [], cats: [], dogs: []}
   end
 
   def self.all
@@ -25,56 +24,52 @@ def initialize(species)
   end
 
   def say_species
-    "I am a #{species}."
+    return "I am a #{species}."
   end
 
-  def buy_fish(name)
-    fish = Fish.new(name)
+  def buy_fish(fish_name)
+    fish = Fish.new(fish_name)
     pets[:fishes] << fish
   end
 
-  def buy_cat(name)
-    pets[:cats] << Cat.new(name)
+  def buy_cat(cat_name)
+    cat = Cat.new(cat_name)
+    pets[:cats] << cat
   end
 
-  def buy_dog(name)
-    pets[:dogs] << Dog.new(name)
+  def buy_dog(dog_name)
+    dog = Dog.new(dog_name)
+    pets[:dogs] << dog
   end
 
   def walk_dogs
-    pets.each do |species, animals|
-      animals.each do |pet|
-        pet.mood= "happy"
-      end
+    pets[:dogs].each do |dog|
+      dog.mood = "happy"
     end
   end
 
   def play_with_cats
-    pets.each do |species, animals|
-      animals.each do |pet|
-        pet.mood= "happy"
-      end
+    pets[:cats].each do |cat|
+      cat.mood = "happy"
     end
   end
 
   def feed_fish
-    pets.each do |species, animals|
-      animals.each do |pet|
-        pet.mood= "happy"
-      end
+    pets[:fishes].each do |fish|
+      fish.mood = "happy"
     end
   end
 
   def sell_pets
-    @pets.each do |species, animals|
-      animals.each do |pet|
+    pets.each do |key, value|
+      value.each do |pet|
         pet.mood= "nervous"
       end
-      animals.clear
+      value.clear
     end
   end
 
   def list_pets
-    "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
+    return "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
   end
 end
