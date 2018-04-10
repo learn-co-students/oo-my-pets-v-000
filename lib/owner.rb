@@ -31,7 +31,7 @@ class Owner
   end
 
   def say_species
-   "I am a human."
+   "I am a #{species}."
   end
 
   def name
@@ -39,18 +39,16 @@ class Owner
   end
 
   def buy_dog(name)
-    dog = Dog.new(name)
-    @pets[:dogs] << dog
+    @pets[:dogs] << Dog.new(name)
+
   end
 
   def buy_cat(name)
-    cat = Cat.new(name)
-    @pets[:cats] << cat
+    @pets[:cats] <<  Cat.new(name)
   end
 
   def buy_fish(name)
-    fish = Fish.new(name)
-    @pets[:fishes] << fish
+    @pets[:fishes] <<  Fish.new(name)
   end
 
   def play_with_cats
@@ -66,15 +64,12 @@ class Owner
   end
 
   def sell_pets
-    # owner.sell_pets
-    # owner.pets.each {|type, pets| expect(pets.empty?).to eq(true) }
-    # [fido, tabby, nemo].each { |o| expect(o.mood).to eq("nervous") }
     @pets.each {|type, pets| pets.each {|p| p.mood = "nervous"}}
     @pets.each {|type, pets| pets.clear}
   end
 
   def list_pets
-  "I have #{@pets[:fishes].count} fish, #{@pets[:dogs].count} dog(s), and #{@pets[:cats].count} cat(s)."
+  "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."
 
   end
 end
