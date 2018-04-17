@@ -1,18 +1,14 @@
 require 'pry'
 class Cat
   # code goes here
-  attr_accessor :name, :mood
+  attr_accessor :mood
+  attr_reader :name
+  attr_writer
 
-    def initialize(name)
+    def initialize(name, mood = 'nervous')
       @name = name
+      @mood = mood
     end
-
-
-
-
-
-
-
 
 
 
