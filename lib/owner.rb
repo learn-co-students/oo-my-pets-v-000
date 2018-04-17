@@ -1,23 +1,52 @@
 require 'pry'
 class Owner
   # code goes here
-  attr_accessor :fish, :cat, :dog, :name
+  OWNERS = []
+
+  attr_accessor :name, :pets
   attr_reader :species
 
-  @@ownercount = 0
+    def self.all
+      OWNERS
+    end
 
-    def all
-      @all
+    def self.reset_all
+      OWNERS.clear
     end
 
     def self.count
-      @@count
+      OWNERS.size
     end
+
 
     def initialize(species)
       @species = species
-      @all
+      OWNERS << self
+      @pets = {:fishes => [], :dogs => [], :cats => []}
     end
+
+    def say_species
+     "I am a #{species}."
+    end
+
+    def buy_fish(name)
+      @pets[:fishes] << Fish.new(name)
+    end
+
+    def buy_cat(name)
+      @pets[:cats] << Cat.new(name)
+    end
+
+    def buy_dog(name)
+      @pets[:dogs] << Dog.new(name)
+    end
+
+    def walk_dogs
+      @pets[:dog].each do |walks|
+        
+    end
+
+
 
 
 end
