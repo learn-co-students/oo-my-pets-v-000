@@ -6,8 +6,8 @@ class Owner
 
   @@ownercount = 0
 
-    def self.all
-      @@all
+    def all
+      @all
     end
 
     def self.count
