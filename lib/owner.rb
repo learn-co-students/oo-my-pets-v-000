@@ -17,22 +17,20 @@ class Owner
     end
 
     def self.count
-      @@count
+      self.all.size
     end
 
     def self.reset_all
-      @@count = 0
+      self.all.clear
     end
 
     def say_species
-      "I am a human."
+      "I am a #{@species}."
     end
 
   def buy_fish(name)
-    fish = Fish.new(name)
-    @pets[:fishes] << fish
-    puts @pets[:fishes].size
-    puts @pets[:fishes]
+    fish  = Fish.new(name)
+    @pets[:fishes]  <<  fish
   end
 
   def buy_dog(name)
@@ -62,19 +60,19 @@ class Owner
     end
   end
 
-end
+    def list_pets
+      "I have #{@pets[:fishes].length} fish, #{@pets[:dogs].length} dog(s), and #{@pets[:cats].length} cat(s)."
+    end
 
-
-class Fish
-  attr_reader  :name
-  attr_accessor  :mood
-
-  def initialize (name, mood = "nervous")
-    @name = name
-    @mood = mood
+  def sell_pets
+    @pets.each do |type, name_array|
+      name_array.each do |pet|
+        pet.mood = "nervous"
+        #name_array.delete(pet)
+      end
+    end
+    @pets = {}
   end
-end
 
 
-owner = Owner.new("fff")
-owner.buy_fish("ff")
+  end
