@@ -12,18 +12,15 @@ class Owner
   end
 
   def buy_fish(name)
-    fish = Fish.new(name)
-    @pets[:fishes] << fish
+    @pets[:fishes] << Fish.new(name)
   end
 
   def buy_cat(name)
-    cat = Cat.new(name)
-    @pets[:cats] << cat
+    @pets[:cats] << Cat.new(name)
   end
 
   def buy_dog(name)
-    dog = Dog.new(name)
-    @pets[:dogs] << dog
+    @pets[:dogs] << Dog.new(name)
   end
 
   def walk_dogs
@@ -49,7 +46,8 @@ class Owner
       names.each do |pet|
         pet.mood = "nervous"
       end
-      @pets[type].clear
+      # @pets[type].clear
+      names.clear
     end
   end
 
