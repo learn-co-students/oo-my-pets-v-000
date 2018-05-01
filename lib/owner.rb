@@ -29,12 +29,51 @@ class Owner
     "I am a #{species}."
   end
 
-  def buy_fish(fish)
+  def buy_fish(name)
+    fish = Fish.new(name)
     if fish.class == Fish
       @pets[:fishes] << fish
     end
   end
+
+  def buy_cat(name)
+    cat = Cat.new(name)
+    if cat.class == Cat
+      @pets[:cats] << cat
+    end
+  end
+
+  def buy_dog(name)
+    dog = Dog.new(name)
+    if dog.class == Dog
+      @pets[:dogs] << dog
+    end
+  end
+
+  def walk_dogs
+    @pets[:dogs].each do |item|
+      item.mood = "happy"
+    end
+  end
+
+  def play_with_cats
+    @pets[:cats].each do |item|
+      item.mood = "happy"
+    end
+  end
+
+  def feed_fish
+    @pets[:fishes].each do |item|
+      item.mood = "happy"
+    end
+  end
   # #
   # binding.pry
+  def sell_pets
+    @pets.each do |animal_type, pet|
+      pet = nil
+      end
+    end
+  end
 
 end
