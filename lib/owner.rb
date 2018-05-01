@@ -67,13 +67,34 @@ class Owner
       item.mood = "happy"
     end
   end
-  # #
-  # binding.pry
+
+
   def sell_pets
-    @pets.each do |animal_type, pet|
-      pet = nil
+    @pets.each do |pets, pet_array|
+      pet_array.each do |pet|
+        pet.mood = "nervous"
       end
     end
-  end
+      @@owners.each do |owner|
+        owner.pets.each do |species, instances|
+          instances.clear
+        end
+      end
+    end
+
+#WORKS BUT NOT WELL
+    def list_pets
+      list_pets = []
+      @pets.collect do |pets, pet_array|
+        list_pets << "#{pet_array.count}" + " #{pets}"
+      end
+      "I have " + "#{list_pets[0]}".chomp("es") + ", " + "#{list_pets[2]}".chomp("s") + "(s), " + "and " + "#{list_pets[1]}".chomp("s") + "(s)."
+     end
+
+#BETTER BELOW
+    #  def list_pets
+    #      return "I have #{@pets[:fishes].count} fish, #{@pets[:dogs].count} dog(s), and #{@pets[:cats].count} cat(s)."
+    #   end
+
 
 end
