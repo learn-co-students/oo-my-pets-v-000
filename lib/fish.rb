@@ -11,11 +11,5 @@ class Fish
   def name
     @name
   end 
-  
-  def create_by_name(fish_name)
-    new_fish = self.new(fish_name)
-    new_fish
-  end 
-  
  
 end

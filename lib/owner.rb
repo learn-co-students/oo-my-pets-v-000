@@ -43,8 +43,7 @@ class Owner
   end 
   
   def pets
-   
-    @pets 
+     @pets 
   end 
   
   def buy_fish(fish_name)
@@ -72,21 +71,20 @@ class Owner
     @pets[:fishes][0].mood = "happy"
   end 
   
-  def sell_pets 
-      @pets.map do |type, each_pets| 
-        if each_pets == []
-          return true
-        end 
-        
-          each_pets.map do |pet|
-             # binding.pry
-                 pet.mood = "nervous"
-          end
-         
-       
+  def sell_pets
+      
+      if(@pets[:fishes] == [] && @pets[:cats] == [] && @pets[:dogs] == [] )
+        return " "
       end 
-      @pets
-     # binding.pry 
+      
+       @pets.map do |type, each_pets| 
+        each_pets.map do |pet|
+             pet.mood = "nervous"
+          end
+      end
+      @pets = { :fishes => [], :cats => [], :dogs => [] }
+      
+      #binding.pry
   end 
   
   def list_pets 
