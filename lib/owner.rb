@@ -2,7 +2,6 @@ require 'pry'
 
 class Owner
   attr_accessor :pets, :name
-  attr_writer
   attr_reader :species
 
   @@all = []
@@ -50,15 +49,21 @@ class Owner
   end
 
   def play_with_cats
-    Cat.mood = "happy"
+    @pets[:cats].each do |cat|
+      cat.mood = "happy"
+    end
   end
 
   def walk_dogs
-    Dog.mood = "happy"
+    @pets[:dogs].each do |dog|
+      dog.mood = "happy"
+    end
   end
 
   def feed_fish
-    Fish.mood = "happy"
+    @pets[:fishes].each do |fish|
+      fish.mood = "happy"
+    end
   end
 
   def list_pets
@@ -66,7 +71,16 @@ class Owner
   end
 
   def sell_pets
-
+    @pets[:cats].each do |cat|
+      cat.mood = "nervous"
+    end
+    @pets[:dogs].each do |dog|
+      dog.mood = "nervous"
+    end
+    @pets[:fishes].each do |fish|
+      fish.mood = "nervous"
+    end
+    @pets = {fishes: [], cats: [], dogs: []}
   end
 
 end
