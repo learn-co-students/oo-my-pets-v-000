@@ -4,16 +4,15 @@ class Cat
   attr_reader :name
   
   def initialize(name)
-    @name = name
-    @mood = "nervous"
+    self.name = name
+    self.mood = "nervous"
   end
   
   def name=(name)
     if @name == nil
       @name = name
     else
-      raise NoMethodError, "Species is already set as #{self.name}"
+      raise NoMethodError, "This cat already has a name its #{self.name}"
     end
   end
-  
 end
