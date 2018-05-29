@@ -1,17 +1,17 @@
 class Owner
   attr_accessor :name, :pets
   attr_reader :species
-  @@all = [] #keeps track of all the owners
+  @@all = []
 
-  def self.count #number of owners
+  def self.count
     @@all.count
   end
 
-  def self.reset_all #reset owner array
+  def self.reset_all
     @@all.clear
   end
 
-  def self.all #recall array of owners
+  def self.all
     @@all
   end
 
@@ -38,31 +38,19 @@ class Owner
     end
 
     def walk_dogs
-      @pets.collect do |species, species_instances|
-        if species = :dogs
-          species_instances.each {|dog| dog.mood = "happy"}
-        end
-      end
+      pets[:dogs].each {|dog| dog.mood = "happy"}
     end
 
     def play_with_cats
-      @pets.collect do |species, species_instances|
-        if species = :cats
-          species_instances.each {|cat| cat.mood = "happy"}
-        end
-      end
+      pets[:cats].each {|cat| cat.mood = "happy"}
     end
 
     def feed_fish
-      @pets.collect do |species, species_instances|
-        if species = :fishes
-          species_instances.each {|fish| fish.mood = "happy"}
-        end
-      end
+      pets[:fishes].each {|fish| fish.mood = "happy"}
     end
 
     def sell_pets
-      @pets.collect do |species, species_instances|
+      pets.collect do |species, species_instances|
         species_instances.each {|pet| pet.mood = "nervous"}
         species_instances.clear
       end
