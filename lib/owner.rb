@@ -57,12 +57,12 @@ class Owner
   end
     
   def sell_pets
-    @pets.each do |pet_key, pet_array|
-      pet_array.each do |pet|
+    @pets.collect do |pet_key, pet_array|
+      pet_array.collect do |pet|
         pet.mood = "nervous"
       end
     end
-    @pets.each do |pet_key, pet_array|
+    @pets.collect do |pet_key, pet_array|
       pet_array.clear
     end
   end
