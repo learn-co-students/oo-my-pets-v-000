@@ -14,7 +14,18 @@ end
 def self.all 
   Owners
 end 
+
+def self.count 
+  Owners.size 
+end 
+
+ def self.reset_all 
+   Owners.clear 
+end 
   
+def say_species 
+   "I am a #{species}."
+end 
   
 
 end
