@@ -30,7 +30,6 @@ class Owner
 
   def buy_fish(name) 
   	new_fish = Fish.new(name) 
-  	#add to pets hash (similar line for other buy methods)
   	pets[:fishes] << new_fish
   end 
 
