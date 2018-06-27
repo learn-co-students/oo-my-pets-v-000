@@ -6,8 +6,4 @@ class Cat
     @mood = "nervous"
   end
   
-  def buy_cat(name)
-    new_cat = Cat.new 
-    new_cat.name = name 
-  end 
 end

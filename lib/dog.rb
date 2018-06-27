@@ -7,8 +7,4 @@ class Dog
     @mood = "nervous"
   end 
 
-  def buy_dog(name)
-    new_dog = Dog.new 
-    new_dog.name = name 
-  end 
 end
