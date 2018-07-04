@@ -1,3 +1,11 @@
 class Owner
-  # code goes here
+
+  attr_accessor :pets
+
+  @pets = {fishes: [], cats: [], dogs: []}
+
+  def buy_cat/dog/fish(name)
+  
+  end
+
 end
