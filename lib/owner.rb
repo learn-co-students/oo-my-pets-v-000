@@ -4,9 +4,9 @@ class Owner
 
   @@all = []
 
-  def initialize(name, species = "human")
+  def initialize(name)
     @name = name
-    @species = species
+    @species = "human"
     @pets = {fishes: [], cats: [], dogs: []}
     @@all << self
   end
@@ -27,4 +27,7 @@ class Owner
     "I am a #{@species}."
   end
 
+  def buy_fish(name)
+    @pets[:fishes] << Fish.new(name) #i think i need a method to call pet hash to add items to it
+  end
 end
