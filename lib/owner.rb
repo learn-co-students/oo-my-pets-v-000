@@ -1,3 +1,11 @@
 class Owner
-  # code goes here
-end
+  attr_accessor :pets 
+  
+  def initialize()
+
+
+
+
+
+
+end 
