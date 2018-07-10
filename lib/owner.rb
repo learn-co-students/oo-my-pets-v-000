@@ -11,7 +11,7 @@ class Owner
     @@owners << self
   end
   
-  def say_species(species)
+  def say_species
     "I am a #{species}."
   end
   
@@ -24,30 +24,30 @@ class Owner
   end
   
   def buy_fish(fish_name)
-    @pets[:fish] << Fish.new(fish_name)
+    @pets[:fishes] << Fish.new(fish_name)
   end
   
   def walk_dogs
-    @pets[:dogs].each do | mood | 
+    @pets[:dogs].each do | dog | 
       dog.mood = "happy"
     end
   end
   
   def play_with_cats
-    @pets[:cats].each do | mood | 
+    @pets[:cats].each do | cat | 
       cat.mood = "happy"
     end
   end
   
   def feed_fish
-    @pets[:fish].each do | mood | 
+    @pets[:fishes].each do | fish | 
       fish.mood = "happy"
     end
   end
   
   def sell_pets
     @pets.each do | type, name_array | 
-      name.array.each do | pet | 
+      name_array.each do | pet | 
         pet.mood = "nervous"
       end
     end
@@ -55,14 +55,14 @@ class Owner
   end
       
   def list_pets
-    "I have #{@pets[:fish].length} fish, #{@pets[:dogs.length]} dog(s), and #{@pets[:cats].length} cat(s)."
+    "I have #{@pets[:fishes].length} fish, #{@pets[:dogs].length} dog(s), and #{@pets[:cats].length} cat(s)."
   end
   
   def self.all
     @@owners
   end
   
-  def self.reset.all
+  def self.reset_all
     @@owners.clear
   end
   
