@@ -11,10 +11,13 @@ class Owner
     @@owners << self
   end
   
-  def buy_cat/dog/fish(name)
-    @name = name
-    @pets << name
-  end
+  def say_species(species)
+    "I am a #{species}."
+  
+#  def buy_cat/dog/fish(name)
+#    @name = name
+#    @pets << name
+#  end
 
 
 end
