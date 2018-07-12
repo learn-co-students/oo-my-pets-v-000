@@ -1,3 +1,9 @@
 class Cat
-  # code goes here
+  attr_accessor :name, :mood 
+  
+  def intialize(name)
+    @name = name
+    @mood = 'nervous'
+  end
+
 end
