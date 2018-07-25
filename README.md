@@ -4,7 +4,6 @@
 
 1. Gain a deeper understanding of object relations.
 2. Build classes that produce objects that interact with one another through associations and behavior. 
-
 ## Instructions
 
 This is a test-driven lab. Use the test file and test output to understand what is being asked of you as you follow the guidelines below. 
