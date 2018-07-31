@@ -2,8 +2,8 @@ require 'pry'
 class Owner
   # code goes here
   @@all = []
-  attr_accessor :name, :pets
-  attr_accessor :owner
+  attr_accessor :name, :pets, :owner
+  attr_reader :species
 
 
   def initialize(owner)
@@ -26,9 +26,7 @@ class Owner
     @@all.count
   end
 
-  def species
-    @species.dup.freeze
-  end
+
 
   def say_species
     "I am a #{@species}."
