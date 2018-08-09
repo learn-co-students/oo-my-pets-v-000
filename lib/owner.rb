@@ -1,27 +1,35 @@
+require 'pry'
+
 class Owner
-  @@all = []
-  attr_accessor :owner_name
-  attr_reader :species
   
-  def initialize(owner_name)
-    owner = Owner.new(owner_name)
-    @owner_name = owner_name
+  @@all = []
+  
+  attr_accessor :pets, :name
+  attr_reader :species
+
+  def initialize(species)
+    @species = species
+    @pets = {fishes: [], cats: [], dogs: []}
+    @@all << self
   end
   
   def self.all
-    @@all << self 
+    @@all 
+  end
+  
+  def self.count
+    self.all.count
   end
   
   def self.reset_all 
-    count = @@all.size
-  end 
-  
-  def self.count 
-
+    self.all.clear
   end
   
-  def species
-    @species = species
-  end 
+  def say_species 
+    return "I am a #{self.species}."
+  end
+  
+  def buy_fish
+  end
   
 end
