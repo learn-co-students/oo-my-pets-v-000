@@ -56,11 +56,10 @@ class Owner
     cats.each do |cat|
       cat.mood = "happy"
     end
-    
   end 
   
   def feed_fish 
-    fish = self.pets[:fish]
+    fish = self.pets[:fishes]
     fish.each do |fish|
       fish.mood = "happy"
     end
@@ -71,5 +70,22 @@ class Owner
     number_of_dogs = pets[:dogs].size
     number_of_cats = pets[:cats].size 
     return "I have #{number_of_fish} fish, #{number_of_dogs} dog(s), and #{number_of_cats} cat(s)."
+  end
+  
+  def sell_pets 
+    fish = self.pets[:fishes]
+    fish.each do |fish|
+      fish.mood = "nervous"
+    end
+    cats = self.pets[:cats]
+    cats.each do |cat|
+      cat.mood = "nervous"
+    end
+    dogs = self.pets[:dogs]
+    dogs.each do |dog|
+      dog.mood = "nervous"
+    end 
+    pets.clear
+    
   end
 end
