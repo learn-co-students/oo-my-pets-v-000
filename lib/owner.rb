@@ -1,19 +1,14 @@
 require 'pry'
 class Owner
-  attr_accessor :pets
-  attr_reader :name, :species
+  attr_accessor :name, :pets
+  attr_reader :species
   @@all = []
 
-    def initialize(name)
+    def initialize(name, species = "human")
       @name = name
-      @species = "human"
+      @species = species
       @pets = {fishes: [], cats: [], dogs: []}
       @@all << self
-    end
-
-    #it allows the instance of owner to change its name
-    def name=(name)
-      @name = name
     end
 
     #it can state it's own species
@@ -79,3 +74,4 @@ class Owner
       @@all.clear
     end
 end
+binding.pry
