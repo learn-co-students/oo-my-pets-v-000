@@ -20,7 +20,7 @@ describe Owner do
 
     it "can reset the owners that have been created" do
       Owner.reset_all
-      expect(Owner.count).to eq(0)
+      expect(Owner.count).to eq(0) 
     end
 
     it "can initialize an owner" do
