@@ -1,3 +1,6 @@
+require_relative './fish.rb'
+require_relative './dog.rb'
+require_relative './cat.rb'
 require 'pry'
 class Owner
 @@all = [] #keeps track of the owners created
@@ -74,5 +77,15 @@ attr_reader :species
   def list_pets
     "I have #{pets[:fishes].size} fish, #{pets[:dogs].size} dog(s), and #{pets[:cats].size} cat(s)."
   end
-  #binding.pry
+  # binding.pry
 end
+
+# binding.pry
+
+# make note to Z about pry and code below
+
+# sally = Owner.new("Sally")
+# sally.buy_fish("Nemo")
+# sally.buy_dog("Brunno")
+# sally.buy_cat("WoofWoof")
+# sally.buy_dog("Fido")
