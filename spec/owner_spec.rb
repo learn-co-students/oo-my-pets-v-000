@@ -143,13 +143,14 @@ describe Owner do
         tabby = Cat.new("Tabby")
         nemo = Fish.new("Nemo")
         [fido, tabby, nemo].each {|o| o.mood = "happy" }
-        owner.pets = {
+        owner.pets = { #146-150  inserting the objects into the array
           :dogs => [fido, Dog.new("Daisy")],
           :fishes => [nemo],
           :cats => [Cat.new("Mittens"), tabby]
         }
         owner.sell_pets
-        owner.pets.each {|type, pets| expect(pets.empty?).to eq(true) }
+        owner.pets.each {|type, pets| expect(pets.empty?).to eq(true) } #instance of the owner class, then calling the instance mehtod pets on it,
+        #and then iterate over the hash's keys and values |key (fish cat dog), array|, expecting the pets hash to be empty
         [fido, tabby, nemo].each { |o| expect(o.mood).to eq("nervous") }
       end
     end
