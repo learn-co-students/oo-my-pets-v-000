@@ -19,8 +19,6 @@ class Owner
     @@all
   end
   
-  def mood
-    
   def self.species
     @species
   end
@@ -29,9 +27,10 @@ class Owner
     "I am a #{species}."
   end
   
-  def buy_fish(name)
- 
-      
+  def buy_fish(fish)
+    fish = Fish.name
+    @pets[:fishes] = "#{fish}"
+    
   end
   
   def buy_cat(name)
@@ -43,7 +42,7 @@ class Owner
   end
   
   def walk_dogs
-    Dog.mood = "happy"
+    @pets[:dogs].each { |d| d.mood = "happy"}
   end
   
   def play_with_cats
@@ -55,7 +54,7 @@ class Owner
   end
   
   def list_pets
-    
+    "I have #{@pets[:fishes].count} fish, #{@pets[:dogs].count} dog(s), and #{@pets[:cats].count} cat(s)."
   end
   
   def sell_pets
