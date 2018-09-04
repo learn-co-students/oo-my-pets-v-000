@@ -1,4 +1,5 @@
 class Owner
+  attr_reader :species
   attr_accessor :name, :pets
   @@count = 0
   @@all = []
@@ -6,28 +7,31 @@ class Owner
     @name = name
     @@all << self
     @@count += 1
+    @species = "human"
     @pets = {fishes: [], cats: [], dogs: []}
   end
   
   def self.count
     @@count
   end
+  
   def self.all
     @@all
   end
   
-  def species
-  
+  def mood
+    
+  def self.species
+    @species
   end
   
-  def says_species
-    
+  def say_species
+    "I am a #{species}."
   end
   
   def buy_fish(name)
-    name = Fish.new
-    @pets[:fishes] = "#{name}"
-    @@count += 1
+ 
+      
   end
   
   def buy_cat(name)
@@ -51,11 +55,11 @@ class Owner
   end
   
   def list_pets
-    @pets.each { |p| puts p.name}
+    
   end
   
   def sell_pets
-    
+    @pets = {fishes: [], cats: [], dogs: []}
   end
   
   def self.reset_all
