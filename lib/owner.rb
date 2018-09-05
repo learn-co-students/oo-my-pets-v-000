@@ -27,18 +27,16 @@ class Owner
     "I am a #{species}."
   end
   
-  def buy_fish(fish)
-    fish = Fish.name
-    @pets[:fishes] = "#{fish}"
-    
+  def buy_fish(name)
+    @pets[:fishes] << Fish.new(name)
   end
   
   def buy_cat(name)
-    
+    @pets[:cats] << Cat.new(name)
   end
   
   def buy_dog(name)
-    
+     @pets[:dogs] << Dog.new(name)
   end
   
   def walk_dogs
@@ -46,11 +44,11 @@ class Owner
   end
   
   def play_with_cats
-    Cat.mood = "happy"
+    @pets[:cats].each { |c| c.mood = "happy"}
   end
 
   def feed_fish
-    Fish.mood = "happy"
+    @pets[:fishes].each { |f| f.mood = "happy"}
   end
   
   def list_pets
@@ -58,6 +56,9 @@ class Owner
   end
   
   def sell_pets
+    @pets[:dogs].each { |d| d.mood = "nervous"}
+    @pets[:cats].each { |c| c.mood = "nervous"}
+    @pets[:fishes].each { |f| f.mood = "nervous"}
     @pets = {fishes: [], cats: [], dogs: []}
   end
   
