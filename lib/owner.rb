@@ -63,7 +63,7 @@ class Owner
             pet.mood = "nervous"#calling the method mood on pet because pet is a value of that array.
           end
     end
-    self.pets.clear #or pet.clear
+    self.pets.clear #or pets.clear
   end
   
 
