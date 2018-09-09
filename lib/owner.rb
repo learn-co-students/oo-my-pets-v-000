@@ -52,14 +52,28 @@ class Owner
   def feed_fish
     self.pets[:fishes].each{|f| f.mood = "happy"}
   end
-
-  def sell_pets
-    self.pets.each do |pet_type, pets|
-      pets.each{|pet| pet.mood = "nervous"}
+  
+  
+  def sell_pets #each_value method → an_enumerator. Calls block once for each key in hash, passing the value as a parameter.
+    #If no block is given, an enumerator is #returned instead.
+    
+    pets.each_value do |array| #going to the pets hash, accessing just the value which is the array.
+    
+          array.each do |pet|#iterating on the array
+            pet.mood = "nervous"#calling the method mood on pet because pet is a value of that array.
+          end
     end
-    self.pets.clear
+    self.pets.clear 
   end
+  
 
+  # def sell_pets
+  #   self.pets.each do |pet_type, pets|
+  #     pets.each{|pet| pet.mood = "nervous"}
+  #   end
+  #   self.pets.clear
+  # end
+  
   def list_pets
     "I have #{self.pets[:fishes].size} fish, #{self.pets[:dogs].size} dog(s), and #{self.pets[:cats].size} cat(s)."
   end
