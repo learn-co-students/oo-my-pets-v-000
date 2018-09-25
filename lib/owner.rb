@@ -59,10 +59,19 @@ class Owner
   end 
   
   def sell_pets
-    @pets.each do |pet_type|
-    
+    @pets[:fishes]= @pets[:fishes].collect {|fish| fish.mood = "nervous"}
+    @pets[:cats]= @pets[:cats].collect {|cat| cat.mood = "nervous"}
+    @pets[:dogs]= @pets[:dogs].collect {|dog| dog.mood = "nervous"}
     
     @pets= {fishes: [], cats:[], dogs: []}
   end
+  
+  def list_pets
     
+  end
+  
+  
+  
+  
+  
 end
