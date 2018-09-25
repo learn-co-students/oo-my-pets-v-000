@@ -1,14 +1,15 @@
 class Owner
   
-  attr_accessor :name
+  attr_accessor :pets, :name
+  attr_reader :species
   
   @@all = []
   @@count = 0
   
-  def initialize(name)
-    @name= name
+  def initialize(species)
+    @species=species
     @@all << self
-    @@count += 1
+    @pets= {fishes: [], cats:[], dogs: []}
   end
   
   def self.all
@@ -16,11 +17,19 @@ class Owner
   end
   
   def self.count
-    @@count
+    @@all.length
   end
   
   def self.reset_all
-    @@count = 0
+    @@all= []
+  end
+  
+  def say_species
+    p "I am a #{@species}."
+  end
+  
+  def buy_fish
+    
   end
   
   
