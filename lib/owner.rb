@@ -57,8 +57,21 @@ class Owner
     end
   end
    
+  def sell_pets
+    @pets.map do |species, individuals|
+      individuals.each do |pet|
+       pet.mood = "nervous"
+     end
+     individuals.clear
+    end
+  end   
    
-   
+   def list_pets
+    fish_total = @pets[:fishes].count
+    dog_total = @pets[:dogs].count
+    cat_total = @pets[:cats].count
+    "I have #{fish_total} fish, #{dog_total} dog(s), and #{cat_total} cat(s)."
+   end
    
   def self.all
     @@all 
