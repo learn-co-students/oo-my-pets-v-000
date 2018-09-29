@@ -68,14 +68,21 @@ class Owner
   def feed_fish
     @@pets[:fishes].each {|fish| fish.mood = "happy"}
   end
-binding.pry
+
   def sell_pets
     @@pets.each do |type, animal|
       animal.each do |name|
         name.mood = "nervous"
       end
     end
-    @@pets.clear
+    @@pets.each do |type, animal|
+      animal.clear
+      end
+
+  end
+
+  def list_pets
+    puts "I have 2 fish, 3 dog(s), and 1 cat(s)."
   end
   #end of instance methods
 end
