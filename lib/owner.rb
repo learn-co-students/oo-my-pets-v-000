@@ -22,16 +22,16 @@ class Owner
   end
 
   #end of class methods
-  @@pets =
-    {
-      fishes: [],
-      cats: [],
-      dogs: []
-    }
+
   #instance methods
   def initialize(species)
     @species = species
     @@all << self
+    @pets =     {
+          fishes: [],
+          cats: [],
+          dogs: []
+        }
   end
 
   def say_species
@@ -39,50 +39,47 @@ class Owner
   end
 
   def pets
-    @@pets
+    @pets
   end
 
   def buy_fish(name)
     name = Fish.new(name)
-    @@pets[:fishes] << name
+    @pets[:fishes] << name
   end
 
   def buy_cat(name)
     name = Cat.new(name)
-    @@pets[:cats] << name
+    @pets[:cats] << name
   end
 
   def buy_dog(name)
     name = Dog.new(name)
-    @@pets[:dogs] << name
+    @pets[:dogs] << name
   end
 
   def walk_dogs
-    @@pets[:dogs].each {|doggo| doggo.mood = "happy"}
+    @pets[:dogs].each {|doggo| doggo.mood = "happy"}
   end
 
   def play_with_cats
-    @@pets[:cats].each {|kitty| kitty.mood = "happy"}
+    @pets[:cats].each {|kitty| kitty.mood = "happy"}
   end
 
   def feed_fish
-    @@pets[:fishes].each {|fish| fish.mood = "happy"}
+    @pets[:fishes].each {|fish| fish.mood = "happy"}
   end
 
   def sell_pets
-    @@pets.each do |type, animal|
+    @pets.each do |type, animal|
       animal.each do |name|
         name.mood = "nervous"
       end
     end
-    @@pets.each do |type, animal|
-      animal.clear
-      end
-
+    @pets.clear
   end
 
   def list_pets
-    puts "I have 2 fish, 3 dog(s), and 1 cat(s)."
+    return "I have #{@pets[:fishes].length} fish, #{@pets[:dogs].length} dog(s), and #{@pets[:cats].length} cat(s)."
   end
   #end of instance methods
 end
