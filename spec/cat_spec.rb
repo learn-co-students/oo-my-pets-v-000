@@ -26,3 +26,4 @@ describe Cat do
   end
 
 end
+#save
