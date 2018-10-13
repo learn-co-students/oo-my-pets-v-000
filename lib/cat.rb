@@ -1,11 +1,10 @@
 class Cat
-    attr_reader :name
-    attr_accessor :nervous    #can't change its name
-       #can change its mood 
+    attr_reader :name  #can't change its name   #getter 
+    attr_accessor :mood #can change its mood 
    
-   def initialize(name, mood = nervous )
+   def initialize(name, mood = "nervous" )  #initializes with a nervous mood
      @name = name 
-     @nervous = nervous 
+     @mood = mood 
      
    end 
    
