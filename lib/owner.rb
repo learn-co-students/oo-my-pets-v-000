@@ -2,7 +2,7 @@ require 'pry'
 
 class Owner
   
-  attr_accessor :name
+  attr_accessor :name,:pets #pets is initialized with a pets attribute as a hash with 3 keys 
   attr_reader :species 
   
   OWNERS = []
@@ -11,8 +11,7 @@ class Owner
   def initialize(species)
      @species = species 
      OWNERS << self 
-     @pets = { :fishes => [], :dogs => [], :cats => [] }
-  
+     @pets = {:fishes => [], :dogs => [], :cats => []}  #pets is initialized with a pets attribute as a hash with 3 keys 
   end 
   
     def self.all      #keeps track of the owners that have been created
