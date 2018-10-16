@@ -5,32 +5,38 @@ class Owner
   attr_accessor :name
   attr_reader :species 
   
-  @@all= []
-  @@count = 0 
+  OWNERS = []
   
-  def initialize(name, species="human")
-  @name = name   
-  @species = species 
-  @@all << self 
+  
+  def initialize(species)
+     @species = species 
+     OWNERS << self 
+     @pets = { :fishes => [], :dogs => [], :cats => [] }
   
   end 
   
-  def self.all 
-    @@all
-  end
+    def self.all      #keeps track of the owners that have been created
+       OWNERS 
+    end
   
-    def self.count
-   @@count += 1 
- 
+    def self.count      #can count how many owners have been created
+       OWNERS.size 
+    end 
+   
+   def self.reset_all    #can reset the owners that have been created
+      OWNERS.clear 
    end 
    
-   def self.reset_all 
-   @@count 
+    def  say_species 
+     "I am a #{species}."
    end 
-   
   
+
  
    
 
   
 end
+
+
+ 
