@@ -61,20 +61,18 @@ class Owner
   end 
 end 
   
-  def sell_pets 
+  def sell_pets #owner.pets.each {|type, pets| expect(pets.empty?).to eq(true) }
     pets.each do |species, animals|
         animals.each do |animal|
           animal.mood = "nervous"
      end 
          animals.clear
-     end 
-   end  
+    end 
+    end
    
    def list_pets  #expected: "I have 2 fish, 3 dog(s), and 1 cat(s)."
-    "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)."                           
-    
-    
-  end 
+    "I have #{pets[:fishes].count} fish, #{pets[:dogs].count} dog(s), and #{pets[:cats].count} cat(s)." 
+    end 
   
   
 end
