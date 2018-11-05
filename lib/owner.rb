@@ -1,4 +1,3 @@
-require 'pry'
 class Owner
   attr_accessor :pets, :name
   attr_reader :species
@@ -19,7 +18,7 @@ class Owner
   
   def initialize(species)
     @species = species
-    pets = {cats: [], dogs: [], fishes: []}
+    @pets = {cats: [], dogs: [], fishes: []}
     @@all << self
   end
 
@@ -31,37 +30,41 @@ class Owner
     @name
   end 
   
-  def buy_fish
-    Fish.initialize(name, mood = "nervous")
+  def buy_fish(name)
+    pets[:fishes] << Fish.new(name)
   end
   
-  def buy_cat
-    Cat.initialize(name, mood = "nervous")
+  def buy_cat(name)
+    pets[:cats] << Cat.new(name)
   end
 
-  def buy_dog
-    Dog.initialize(name, mood = "nervous")
-    
+  def buy_dog(name)
+    pets[:dogs] << Dog.new(name)
   end
 
   def walk_dogs
-    pets
+    pets[:dogs].map {|dog| dog.mood = "happy"}
   end
 
   def play_with_cats
+    pets[:cats].map {|cat| cat.mood = "happy"}
   end
 
   def feed_fish
+    pets[:fishes].map {|fish| fish.mood = "happy"}
   end
 
   def sell_pets
+    pets.each do |type, pets| 
+      pets.map do |ind|
+        ind.mood = "nervous"
+      end
+    end
     pets.clear
-    pets.each {|pet| pet.mood = "nervous"}
-    pets
   end
 
   def list_pets
-    pets
+    "I have #{pets[:fishes].size} fish, #{pets[:dogs].size} dog(s), and #{pets[:cats].size} cat(s)."
   end
   
 end 
