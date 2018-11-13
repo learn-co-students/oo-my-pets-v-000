@@ -59,9 +59,8 @@ class Owner
   end
   
   def sell_pets
-  
    pets.each do |pet_type|
-      pets[:pet_type] do |petkey|
+      pet_type.each do |petkey|
         petkey.mood = 'nervous'
         petkey.owner = nil
       end
