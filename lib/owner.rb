@@ -1,13 +1,14 @@
-
+require "pry"
 class Owner
   attr_reader :species
   attr_accessor :name, :pets, :fish, :dog, :cat
 
   @@all = []
-  @@pets = {:fishes => [], :dogs => [], :cats => []}
+  
 
   def initialize(species)
     @species = species
+    @pets = {:fishes => [], :dogs => [], :cats => []}
     @name = name
     @@all << self
   end
@@ -29,35 +30,35 @@ class Owner
   end
 
   def pets
-    @@pets
+    pets
   end
 
   def buy_fish(fish)
-    @@pets[:fishes] << Fish.new(fish)
+    pets[:fishes] << Fish.new(fish)
   end
 
   def buy_cat(cat)
-    @@pets[:cats] << Cat.new(cat)
+    pets[:cats] << Cat.new(cat)
   end
 
   def buy_dog(dog)
-    @@pets[:dogs] << Dog.new(dog)
+    pets[:dogs] << Dog.new(dog)
   end
 
   def walk_dogs
-    @@pets[:dogs].each do |dog|
+    pets[:dogs].each do |dog|
       dog.mood = 'happy'
     end
   end
 
   def play_with_cats
-    @@pets[:cats].each do |cat|
+    pets[:cats].each do |cat|
       cat.mood = 'happy'
     end
   end
 
   def feed_fish
-    @@pets[:fishes].each do |fish|
+    pets[:fishes].each do |fish|
       fish.mood = 'happy'
     end
   end
@@ -67,6 +68,7 @@ class Owner
   end
 
   def sell_pets
+    binding.pry
       pets.each do |pet, arr|
       arr.each do |pet|
       pet.mood = 'nervous'
