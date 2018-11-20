@@ -1,4 +1,4 @@
-require "pry"
+
 class Owner
   attr_reader :species
   attr_accessor :name, :pets, :fish, :dog, :cat
@@ -27,10 +27,6 @@ class Owner
 
   def say_species
     "I am a #{@species}."
-  end
-
-  def pets
-    pets
   end
 
   def buy_fish(fish)
@@ -68,7 +64,6 @@ class Owner
   end
 
   def sell_pets
-    binding.pry
       pets.each do |pet, arr|
       arr.each do |pet|
       pet.mood = 'nervous'
