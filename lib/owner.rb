@@ -1,4 +1,4 @@
-require pry
+
 class Owner
   attr_reader :species
   attr_accessor :name, :pets, :fish, :dog, :cat
@@ -67,11 +67,9 @@ class Owner
   end
 
   def sell_pets
-    pets.each do |pet, arr|
-      arr.map do |pet|
-  
-      pet.mood = 'nervous'
-      binding.pry
+    @@pets.each do |pet, arr|
+      arr.each do |pet|
+      pet.mood = 'happy'
       end
       arr.clear
     end
