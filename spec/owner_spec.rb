@@ -1,6 +1,6 @@
 require_relative 'spec_helper.rb'
 
-puts describe Owner do
+ describe Owner do
 
   let(:owner) { Owner.new("human") }
   let(:fish) { Fish.new("Nemo") }
