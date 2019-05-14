@@ -9,7 +9,7 @@ class Fish
   def name=(name)
     raise NoMethodError if @name = name
   end
-  
+
   def mood
     @mood
   end
