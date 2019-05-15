@@ -1,4 +1,5 @@
 class Dog
+  attr_accessor :mood
   attr_reader :name
 
   def initialize(name)
@@ -9,12 +10,12 @@ class Dog
   def name=(name)
     raise NoMethodError if @name = name
   end
-  
-  def mood
-    @mood
-  end
 
-  def mood=(mood)
-    @mood = mood
-  end
+  # def mood
+  #   @mood
+  # end
+  #
+  # def mood=(mood)
+  #   @mood = mood
+  # end
 end
