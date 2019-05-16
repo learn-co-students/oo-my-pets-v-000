@@ -1,3 +1,5 @@
+require 'pry'
+
 class Owner
   attr_accessor :owner, :fish, :cat, :dog, :pets, :name
   attr_reader :species
@@ -59,10 +61,13 @@ class Owner
   end
 
   def sell_pets
+    fido = Dog.new("Fido")
+    tabby = Cat.new("Tabby")
+    nemo = Fish.new("Nemo")
+    pets = [fido, tabby, nemo]
+    pets.each {|o| o.mood = "happy" }
     pets.clear
-    pets.each { |o| o.mood=("nervous") }
-    # pets.each do |o|
-    #   o.mood=("nervous")
-    #   end
+    # pets.clear
   end
+    # binding.pry
 end
