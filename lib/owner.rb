@@ -61,13 +61,22 @@ class Owner
   end
 
   def sell_pets
-    fido = Dog.new("Fido")
-    tabby = Cat.new("Tabby")
-    nemo = Fish.new("Nemo")
-    pets = [fido, tabby, nemo]
-    pets.each {|o| o.mood = "happy" }
-    pets.clear
+    # fido = Dog.new("Fido")
+    # tabby = Cat.new("Tabby")
+    # nemo = Fish.new("Nemo")
+    # pets = [fido, tabby, nemo]
     # pets.clear
+    # pets.each { |type, pets| pets.clear }
+    pets.clear
+    pets.to_a
+    # pets.each { |type, pets| pets.mood=("nervous") }
+
+    # pets.each { |type, pets| pets.each { |o| o.mood=("nervous") } }
+
+    # pets.each { |type, pet| pet.mood=("nervous") }
+
+    # pets[:dogs].mood=("happy")
+    # [:pets].each { |o| o.mood=("nervous") }
   end
     # binding.pry
 end
