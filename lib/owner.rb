@@ -65,13 +65,23 @@ class Owner
     # tabby = Cat.new("Tabby")
     # nemo = Fish.new("Nemo")
     # pets = [fido, tabby, nemo]
-    # pets.clear
+
     # pets.each { |type, pets| pets.clear }
     pets.clear
-    pets.to_a
+    pets.rassoc(pets)
+    # h.rassoc(obj)
+    # pets.each do |type, pets|
+    #   [:type].mood=("nervous")
+    # end
+
+    # owner.pets = {
+    #   :dogs => [fido, Dog.new("Daisy")],
+    #   :fishes => [nemo],
+    #   :cats => [Cat.new("Mittens"), tabby]
+    # }
     # pets.each { |type, pets| pets.mood=("nervous") }
 
-    # pets.each { |type, pets| pets.each { |o| o.mood=("nervous") } }
+    pets.each { |type, pets| pets[:type].each { |o| o.mood=("nervous") } }
 
     # pets.each { |type, pet| pet.mood=("nervous") }
 
