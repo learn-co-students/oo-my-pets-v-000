@@ -68,7 +68,7 @@ class Owner
 
     # pets.each { |type, pets| pets.clear }
     pets.clear
-    pets.rassoc(pets)
+    # pets.rassoc(pets)
     # h.rassoc(obj)
     # pets.each do |type, pets|
     #   [:type].mood=("nervous")
@@ -81,12 +81,12 @@ class Owner
     # }
     # pets.each { |type, pets| pets.mood=("nervous") }
 
-    pets.each { |type, pets| pets[:type].each { |o| o.mood=("nervous") } }
+    # pets.each { |type, pets| pets[:type].each { |o| o.mood=("nervous") } }
 
     # pets.each { |type, pet| pet.mood=("nervous") }
 
-    # pets[:dogs].mood=("happy")
-    # [:pets].each { |o| o.mood=("nervous") }
+    # pets[:dogs].mood=("nervous")
+    pets.each { |o| o.mood=("nervous") }
   end
     # binding.pry
 end
