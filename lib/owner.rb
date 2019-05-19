@@ -62,6 +62,7 @@ class Owner
   end
 
   def sell_pets
+    pets
   #   # self.walk_dogs
   #   # self.play_with_cats
   #   # self.feed_fish
@@ -71,8 +72,8 @@ class Owner
   #   # pets[:fishes].mood=("nervous")
   #
   #   # pets[:dogs][0].mood=("nervous")
-    pets.clear
-    pets.each { |key, value| pets[key].mood=("nervous") }
+    # pets.clear
+    # pets.each { |key, value| pets[key].mood=("nervous") }
 
 
     # pets.each { |key, value| [key][0].mood=("nervous") }
@@ -109,5 +110,5 @@ class Owner
   #   # pets[:dogs].mood=("nervous")
   #   # pets.each { |o| o.mood=("nervous") }
   end
-
+  binding.pry
 end
