@@ -1,16 +1,21 @@
-class Cat
+class Fish
   # code goes here
   attr_accessor :mood
   attr_reader :name
+  @@count = 0
   
   def initialize(name)
   	@name = name
   	@mood = 'nervous'
+  	@@count +=1
   end
   
   def mood
   	@mood
-# binding.pry
   end
-
+  
+  def self.count
+  	@@count
+  end
+  
 end
