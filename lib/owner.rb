@@ -110,5 +110,5 @@ class Owner
   #   # pets[:dogs].mood=("nervous")
   #   # pets.each { |o| o.mood=("nervous") }
   end
-  binding.pry
+  # binding.pry
 end
