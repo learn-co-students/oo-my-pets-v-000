@@ -18,7 +18,7 @@ class Owner
   end
 
   def self.count
-    all.count
+    @@all.count
   end
 
   def self.reset_all
@@ -36,17 +36,19 @@ class Owner
   def buy_fish(fish)
     new_fish = Fish.new(fish)
     pets[:fishes] << new_fish
-    # pets[:fishes]
+    pets[:fishes]
   end
 
   def buy_cat(cat)
     new_cat = Cat.new(cat)
     pets[:cats] << new_cat
+    pets[:cats]
   end
 
   def buy_dog(dog)
     new_dog = Dog.new(dog)
     pets[:dogs] << new_dog
+    pets[:dogs]
   end
 
   def walk_dogs
@@ -60,69 +62,5 @@ class Owner
   def feed_fish
     pets[:fishes][0].mood=("happy")
   end
-
-  def sell_pets
-    pets.clear
-    # pets.each { |o| o.mood=("nervous") }
-    # self.walk_dogs
-    # self.play_with_cats
-    # self.feed_fish
-    # self.pets.clear
-    # self.pets.each { |o| [o].mood=("nervous") }
-  #   # pets[:dogs].mood=("nervous")
-  #   # pets[:cats].mood=("nervous")
-  #   # pets[:fishes].mood=("nervous")
-  #
-  #   # pets[:dogs][0].mood=("nervous")
-    # pets.clear
-    # pets.each { |key, value| pets[key].mood=("nervous") }
-
-
-    # pets.each { |key, value| [key][0].mood=("nervous") }
-  #   # fido = Dog.new("Fido")
-  #   # tabby = Cat.new("Tabby")
-  #   # nemo = Fish.new("Nemo")
-  #   # pets = [fido, tabby, nemo]
-  #
-  #   # pets.each { |type, pets| pets.clear }
-  #   pets.clear
-  #   # pets.rassoc(pets)
-  #   # h.rassoc(obj)
-    # pets.each do |type, pets|
-    #   [:type].mood=("nervous")
-    # end
-  #
-  #   # owner.pets = {
-  #   #   :dogs => [fido, Dog.new("Daisy")],
-  #   #   :fishes => [nemo],
-  #   #   :cats => [Cat.new("Mittens"), tabby]
-  #   # }
-  #
-  #
-    # pets.each do |key, value|
-    #   a = [key].values
-    #   a.mood=("nervous")
-    #   end
-
-      pets.values_at { |key, value| key.mood = "nervous" }
-    # pets.select { |key, value| [key].values_at(0, 0, 1).map { |o| o.mood = "nervous" } }
-
-  #
-    # pets.values.map { |key, value| [value].mood=("nervous") }
-    # pets.clear
-    # a = pets.values
-    # a.values_at(0, 0, 1)
-    # a.map { |o| o.mood = "nervous" }
-
-  #
-  #   # a.values_at(i1, i2, i3)
-  #
-    # pets.each { |type, pets| pets[:type].each { |o| o.mood=("nervous") } }
-  #
-    # pets.each { |type, pet| pet.mood=("nervous") }
-  #
-    # pets[:dogs].mood=("nervous")
-    # pets.each { |o| o.mood=("nervous") }
-  end
-  # binding.pry
 end
+  # binding.pry
