@@ -62,12 +62,12 @@ class Owner
   end
 
   def sell_pets
-    # pets.clear
+    pets.clear
     # pets.each { |o| o.mood=("nervous") }
     # self.walk_dogs
     # self.play_with_cats
     # self.feed_fish
-    self.pets.clear
+    # self.pets.clear
     # self.pets.each { |o| [o].mood=("nervous") }
   #   # pets[:dogs].mood=("nervous")
   #   # pets[:cats].mood=("nervous")
@@ -99,9 +99,21 @@ class Owner
   #   # }
   #
   #
-    self.pets.select { |key, value| [key].values_at(0, 0, 1).mood=("nervous") }
+    # pets.each do |key, value|
+    #   a = [key].values
+    #   a.mood=("nervous")
+    #   end
+
+      pets.values_at { |key, value| key.mood = "nervous" }
+    # pets.select { |key, value| [key].values_at(0, 0, 1).map { |o| o.mood = "nervous" } }
+
   #
-    # pets.values_at(0, 0, 1).mood=("nervous")
+    # pets.values.map { |key, value| [value].mood=("nervous") }
+    # pets.clear
+    # a = pets.values
+    # a.values_at(0, 0, 1)
+    # a.map { |o| o.mood = "nervous" }
+
   #
   #   # a.values_at(i1, i2, i3)
   #
