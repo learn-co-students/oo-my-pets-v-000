@@ -35,20 +35,20 @@ class Owner
 
   def buy_fish(fish)
     new_fish = Fish.new(fish)
-    pets[:fishes] << new_fish
-    pets[:fishes]
+    pets[:fishes].push(new_fish)
+    # pets[:fishes]
   end
 
   def buy_cat(cat)
     new_cat = Cat.new(cat)
-    pets[:cats] << new_cat
-    pets[:cats]
+    pets[:cats].push(new_cat)
+    # pets[:cats]
   end
 
   def buy_dog(dog)
     new_dog = Dog.new(dog)
-    pets[:dogs] << new_dog
-    pets[:dogs]
+    pets[:dogs].push(new_dog)
+    # pets[:dogs]
   end
 
   def walk_dogs
@@ -62,5 +62,6 @@ class Owner
   def feed_fish
     pets[:fishes][0].mood=("happy")
   end
-end
+
   # binding.pry
+end
