@@ -33,21 +33,21 @@ class Owner
     "I am a #{species}."
   end
 
-  def buy_fish(fish)
-    new_fish = Fish.new(fish)
-    pets[:fishes].push(new_fish)
+  def buy_fish(name)
+    name = Fish.new(name)
+    pets[:fishes] << name
     # pets[:fishes]
   end
 
-  def buy_cat(cat)
-    new_cat = Cat.new(cat)
-    pets[:cats].push(new_cat)
+  def buy_cat(name)
+    name = Cat.new(name)
+    pets[:cats]<< name
     # pets[:cats]
   end
 
-  def buy_dog(dog)
-    new_dog = Dog.new(dog)
-    pets[:dogs].push(new_dog)
+  def buy_dog(name)
+    name = Dog.new(name)
+    pets[:dogs] << name
     # pets[:dogs]
   end
 
@@ -64,11 +64,16 @@ class Owner
   end
 
 def sell_pets
+  # sellpets = []
+  buy_cat(name)
+  buy_dog(name)
+  buy_fish(name)
+  pets.select { |key, value| [value].select { |o| o.mood="happy" } }
+
+  # sellpets.each {|o| o.mood = "happy" }
     # pets
     # pets.each { |o| o.mood=("nervous") }
-    self.walk_dogs
-    self.play_with_cats
-    self.feed_fish
+
     # self.pets.clear
     # self.pets.each { |o| [o].mood=("nervous") }
   #   # pets[:dogs].mood=("nervous")
@@ -132,5 +137,5 @@ def sell_pets
     # pets.each { |o| o.mood=("nervous") }
   end
 
-  binding.pry
+  # binding.pry
 end
