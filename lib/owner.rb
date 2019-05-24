@@ -1,7 +1,7 @@
 require 'pry'
 
 class Owner
-  attr_accessor :owner, :fish, :cat, :dog, :pets, :name
+  attr_accessor :owner, :pets, :name
   attr_reader :species
 
   @@all = []
@@ -34,20 +34,20 @@ class Owner
   end
 
   def buy_fish(name)
-    name = Fish.new(name)
-    pets[:fishes] << name
+    fish = Fish.new(name)
+    pets[:fishes] << fish
     # pets[:fishes]
   end
 
   def buy_cat(name)
-    name = Cat.new(name)
-    pets[:cats]<< name
+    cat = Cat.new(name)
+    pets[:cats]<< cat
     # pets[:cats]
   end
 
   def buy_dog(name)
-    name = Dog.new(name)
-    pets[:dogs] << name
+    dog = Dog.new(name)
+    pets[:dogs] << dog
     # pets[:dogs]
   end
 
@@ -64,11 +64,28 @@ class Owner
   end
 
 def sell_pets
-  # sellpets = []
+  # petsale = []
   buy_cat(name)
+  # petsale << c
+
   buy_dog(name)
+  # petsale << d
+
   buy_fish(name)
-  pets.select { |key, value| [value].select { |o| o.mood="happy" } }
+  # petsale << f
+
+  # petsale
+  # pets[:dogs][0].mood=("happy")
+  pets.each { |key, value| [value].mood=("happy") }
+  # # if pets[:dogs]
+  #   walk_dogs
+  # # elsif pets[:cats]
+  #   play_with_cats
+  # # else
+  #   feed_fish
+  # # end
+  #
+  # pets.each { |key, value| [value].map { |o| o.mood="happy" } }
 
   # sellpets.each {|o| o.mood = "happy" }
     # pets
@@ -137,5 +154,5 @@ def sell_pets
     # pets.each { |o| o.mood=("nervous") }
   end
 
-  # binding.pry
+  binding.pry
 end
