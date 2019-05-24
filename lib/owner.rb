@@ -65,13 +65,13 @@ class Owner
 
 def sell_pets
   # petsale = []
-  # buy_cat(name)
+  buy_cat(name)
   # # petsale << c
   #
-  # buy_dog(name)
+  buy_dog(name)
   # # petsale << d
   #
-  # buy_fish(name)
+  buy_fish(name)
   # petsale << f
 
   # petsale
