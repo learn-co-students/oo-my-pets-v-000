@@ -1,16 +1,16 @@
 class Cat
-  attr_accessor :mood, :name, :owner
-  # attr_reader :name
+  attr_accessor :mood, :owner
+  attr_reader :name
 
-  # def initialize(name, mood = "nervous")
-  #   @name = name
-  #   @mood = mood
-  # end
-
-  def initialize(name)
+  def initialize(name, mood = "nervous")
     @name = name
-    @mood = "nervous"
+    @mood = mood
   end
+
+  # def initialize(name)
+  #   @name = name
+  #   @mood = "nervous"
+  # end
 
   def name=(name)
     raise NoMethodError if @name = name
