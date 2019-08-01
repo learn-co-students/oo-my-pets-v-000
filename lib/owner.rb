@@ -15,6 +15,9 @@ attr_reader :name, :species
       #binding.pry
   end
 
+def species
+  @species = species
+end
 
 
   def say_species
