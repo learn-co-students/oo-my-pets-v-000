@@ -1,15 +1,15 @@
 require 'pry'
 
 class Owner
-  attr_reader :species
   attr_accessor :name, :pets
+  attr_reader :species
 
   @@all = []
 
   def initialize(species)
     @species = species
-    @pets = {:cats=>[], :dogs=>[], :fishes=>[]}
-    @@all << self
+    @pets = {:fishes => [], :dogs => [], :cats => []}
+    self.class.all << self
   end
 
   def self.all
@@ -17,11 +17,11 @@ class Owner
   end
 
   def self.reset_all
-    all.clear
+    @@all.clear
   end
 
   def self.count
-    all.count
+    @@all.count
   end
 
   def say_species
@@ -29,33 +29,33 @@ class Owner
   end
 
   def buy_fish(name)
-    fish = Fish.new(name)
-    fish.owner = self
-    @pets[:fishes] << fish
+    @pets[:fishes] << Fish.new(name)
   end
 
   def buy_cat(name)
-    cat = Cat.new(name)
-    cat.owner = self
-    @pets[:cats] << cat
+    @pets[:cats] << Cat.new(name)
   end
 
   def buy_dog(name)
-    dog = Dog.new(name)
-    dog.owner = self
-    @pets[:dogs] << dog
+    @pets[:dogs] << Dog.new(name)
   end
 
   def walk_dogs
-    @pets[:dogs].each{|dog| dog.mood = "happy"}
+    @pets[:dogs].collect do |dog|
+      dog.mood = "happy"
+    end
   end
 
   def play_with_cats
-    @pets[:cats].each{|cat| cat.mood = "happy"}
+    @pets[:cats].collect do |cat|
+      cat.mood = "happy"
+    end
   end
 
   def feed_fish
-    @pets[:fishes].each{|fish| fish.mood = "happy"}
+    @pets[:fishes].collect do |fish|
+      fish.mood = "happy"
+    end
   end
 
   def sell_pets
@@ -65,7 +65,9 @@ class Owner
   end
 
   def list_pets
+    #SINGULAR/PLURAL "I have #{@pets[:fishes].size} fish, #{@pets[:dogs].size} dog#{"s" if @pets[:dogs].size > 1}, and #{@pets[:cats].size} cat#{"s" if @pets[:cats].size > 1}."
     "I have #{@pets[:fishes].size} fish, #{@pets[:dogs].size} dog(s), and #{@pets[:cats].size} cat(s)."
   end
+
 
 end
